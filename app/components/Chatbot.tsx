@@ -19,15 +19,29 @@ const responses = {
     habilidades: "I work with JavaScript, TypeScript, React, Next.js, Node.js, Tailwind CSS and Git. I focus on full-stack web development.",
     default: "I didn't quite understand. You can ask me about: who I am, my projects, my skills or how to contact me.",
   },
+  fr: {
+    quien: "Je suis Sebastián David Marcillo, étudiant en Génie Logiciel en 5ème semestre à l'Universidad Cooperativa de Colombia. Je suis passionné par le développement web full-stack.",
+    proyectos: "Mes projets incluent : Système de Conception Logicielle, Backend et Frontend Énergie Solaire, un clone de Mercado Libre et un projet Qualité Logicielle. Consultez-les dans la section Projets ou sur mon GitHub : github.com/sebastiandavid98",
+    contacto: "Vous pouvez me contacter sur WhatsApp au +57 324 615 9170, sur LinkedIn à linkedin.com/in/sebastian-david-4a1459390 ou via le formulaire de contact sur cette page.",
+    habilidades: "Je maîtrise JavaScript, TypeScript, React, Next.js, Node.js, Tailwind CSS et Git. Je me concentre sur le développement web full-stack.",
+    default: "Je n'ai pas bien compris. Vous pouvez me demander : qui je suis, mes projets, mes compétences ou comment me contacter.",
+  },
+  ja: {
+    quien: "私はセバスティアン・ダビッド・マルシージョです。Universidad Cooperativa de Colombiaでソフトウェアエンジニアリングを5学期学んでいます。フルスタックWeb開発に情熱を持っています。",
+    proyectos: "プロジェクトには：ソフトウェア設計システム、太陽エネルギーのバックエンドとフロントエンド、Mercado Libreのクローン、ソフトウェア品質プロジェクトがあります。プロジェクトセクションまたはGitHub: github.com/sebastiandavid98 でご覧ください。",
+    contacto: "WhatsApp（+57 324 615 9170）、LinkedIn（linkedin.com/in/sebastian-david-4a1459390）、またはこのページのお問い合わせフォームからご連絡ください。",
+    habilidades: "JavaScript、TypeScript、React、Next.js、Node.js、Tailwind CSS、Gitを使用しています。フルスタックWeb開発に注力しています。",
+    default: "よく理解できませんでした。私について、プロジェクト、スキル、連絡方法についてお聞きください。",
+  },
 };
 
-function getResponse(input: string, lang: "es" | "en"): string {
+function getResponse(input: string, lang: "es" | "en" | "fr" | "ja"): string {
   const lower = input.toLowerCase();
-  const r = responses[lang];
-  if (/qui[eé]n|who|nombre|name|eres|are you/.test(lower)) return r.quien;
-  if (/proyecto|project|github|trabajo|work|built/.test(lower)) return r.proyectos;
-  if (/contacto|contact|whatsapp|linkedin|email|tel[eé]fono|phone/.test(lower)) return r.contacto;
-  if (/habilidad|skill|tecnolog|stack|sab[eé]s|know/.test(lower)) return r.habilidades;
+  const r = responses[lang] ?? responses.en;
+  if (/qui[eé]n|who|nombre|name|eres|are you|je suis|私は|誰/.test(lower)) return r.quien;
+  if (/proyecto|project|github|trabajo|work|built|projet|プロジェクト/.test(lower)) return r.proyectos;
+  if (/contacto|contact|whatsapp|linkedin|email|tel[eé]fono|phone|連絡/.test(lower)) return r.contacto;
+  if (/habilidad|skill|tecnolog|stack|compétence|スキル|技術/.test(lower)) return r.habilidades;
   return r.default;
 }
 
