@@ -11,8 +11,10 @@ const certs = {
       date: "Mayo 28, 2025",
       duration: "8 horas",
       location: "Pasto, Colombia",
-      emoji: "🎓",
-      image: "/cert2.jpg",
+      image: "/images/certificado2.jpg",
+      color: "from-blue-600 to-cyan-500",
+      border: "hover:border-blue-400",
+      shadow: "hover:shadow-blue-500/20",
     },
     {
       title: "Tercer Seminario Nacional de Ingeniería de Software",
@@ -20,8 +22,10 @@ const certs = {
       date: "Octubre 17, 2025",
       duration: "8 horas",
       location: "Pasto, Colombia",
-      emoji: "🏆",
-      image: "/cert1.jpg",
+      image: "/images/certificado1.jpg",
+      color: "from-violet-600 to-indigo-500",
+      border: "hover:border-violet-400",
+      shadow: "hover:shadow-violet-500/20",
     },
   ],
   en: [
@@ -31,8 +35,10 @@ const certs = {
       date: "May 28, 2025",
       duration: "8 hours",
       location: "Pasto, Colombia",
-      emoji: "🎓",
-      image: "/cert2.jpg",
+      image: "/images/certificado2.jpg",
+      color: "from-blue-600 to-cyan-500",
+      border: "hover:border-blue-400",
+      shadow: "hover:shadow-blue-500/20",
     },
     {
       title: "3rd National Software Engineering Seminar",
@@ -40,8 +46,10 @@ const certs = {
       date: "October 17, 2025",
       duration: "8 hours",
       location: "Pasto, Colombia",
-      emoji: "🏆",
-      image: "/cert1.jpg",
+      image: "/images/certificado1.jpg",
+      color: "from-violet-600 to-indigo-500",
+      border: "hover:border-violet-400",
+      shadow: "hover:shadow-violet-500/20",
     },
   ],
   fr: [
@@ -51,8 +59,10 @@ const certs = {
       date: "28 mai 2025",
       duration: "8 heures",
       location: "Pasto, Colombie",
-      emoji: "🎓",
-      image: "/cert2.jpg",
+      image: "/images/certificado2.jpg",
+      color: "from-blue-600 to-cyan-500",
+      border: "hover:border-blue-400",
+      shadow: "hover:shadow-blue-500/20",
     },
     {
       title: "3ème Séminaire National de Génie Logiciel",
@@ -60,8 +70,10 @@ const certs = {
       date: "17 octobre 2025",
       duration: "8 heures",
       location: "Pasto, Colombie",
-      emoji: "🏆",
-      image: "/cert1.jpg",
+      image: "/images/certificado1.jpg",
+      color: "from-violet-600 to-indigo-500",
+      border: "hover:border-violet-400",
+      shadow: "hover:shadow-violet-500/20",
     },
   ],
   ja: [
@@ -71,8 +83,10 @@ const certs = {
       date: "2025年5月28日",
       duration: "8時間",
       location: "パスト、コロンビア",
-      emoji: "🎓",
-      image: "/cert2.jpg",
+      image: "/images/certificado2.jpg",
+      color: "from-blue-600 to-cyan-500",
+      border: "hover:border-blue-400",
+      shadow: "hover:shadow-blue-500/20",
     },
     {
       title: "第3回全国ソフトウェアエンジニアリングセミナー",
@@ -80,8 +94,10 @@ const certs = {
       date: "2025年10月17日",
       duration: "8時間",
       location: "パスト、コロンビア",
-      emoji: "🏆",
-      image: "/cert1.jpg",
+      image: "/images/certificado1.jpg",
+      color: "from-violet-600 to-indigo-500",
+      border: "hover:border-violet-400",
+      shadow: "hover:shadow-violet-500/20",
     },
   ],
 };
@@ -92,64 +108,77 @@ export default function Certificates() {
   const [selected, setSelected] = useState<string | null>(null);
 
   return (
-    <section id="certificates" className="bg-gray-50 dark:bg-slate-900 py-24 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex items-center gap-3 mb-4">
+    <section id="certificates" className="relative bg-gray-50 dark:bg-slate-900 py-20 px-6 overflow-hidden">
+      <div className="absolute top-0 left-0 w-80 h-80 bg-blue-50 dark:bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="relative max-w-6xl mx-auto">
+
+        {/* Header */}
+        <div className="animate-slide-right flex items-center gap-3 mb-3">
           <span className="h-px w-8 bg-blue-600" />
           <span className="text-blue-600 dark:text-blue-400 text-sm font-semibold tracking-widest uppercase">
             {t.certificates.label}
           </span>
         </div>
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight mb-14">
+        <h2 className="animate-fade-up text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight mb-12">
           {t.certificates.title}{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
             {t.certificates.titleAccent}
           </span>
         </h2>
 
-        <div className="grid sm:grid-cols-2 gap-6 max-w-3xl">
-          {list.map((cert) => (
+        {/* Cards */}
+        <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          {list.map((cert, i) => (
             <div
               key={cert.title}
-              className="group bg-white dark:bg-slate-800/40 border border-gray-200 dark:border-slate-700/50 rounded-2xl overflow-hidden hover:border-blue-400 dark:hover:border-blue-500/40 hover:shadow-lg transition-all duration-300 cursor-pointer"
+              style={{ animationDelay: `${0.15 * i}s` }}
               onClick={() => setSelected(cert.image)}
+              className={`animate-fade-up group cursor-pointer bg-white dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700/50 ${cert.border} dark:${cert.border} rounded-2xl overflow-hidden transition-all duration-400 hover:scale-[1.03] hover:-translate-y-2 hover:shadow-2xl ${cert.shadow} dark:${cert.shadow}`}
             >
-              {/* Certificate preview image */}
-              <div className="relative h-44 bg-gray-100 dark:bg-slate-700/30 overflow-hidden">
+              {/* Certificate image preview */}
+              <div className="relative h-56 overflow-hidden bg-gray-100 dark:bg-slate-900">
                 <Image
                   src={cert.image}
                   alt={cert.title}
                   fill
-                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 />
-                {/* Overlay hint */}
-                <div className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/10 transition-colors duration-300 flex items-center justify-center">
-                  <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 dark:bg-slate-900/90 text-blue-600 dark:text-blue-400 text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5">
-                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+
+                {/* Gradient overlay at bottom */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
+                {/* View badge */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="flex items-center gap-2 bg-white/95 dark:bg-slate-900/95 text-gray-800 dark:text-white text-sm font-semibold px-4 py-2 rounded-full shadow-lg">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
                     </svg>
                     Ver certificado
                   </span>
                 </div>
+
+                {/* Gradient top bar */}
+                <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${cert.color}`} />
               </div>
 
               {/* Info */}
               <div className="p-5">
-                <div className="text-2xl mb-2">{cert.emoji}</div>
-                <h3 className="text-gray-900 dark:text-white font-bold text-sm leading-snug mb-2">
+                <h3 className="text-gray-900 dark:text-white font-bold text-sm leading-snug mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
                   {cert.title}
                 </h3>
-                <p className="text-blue-600 dark:text-blue-400 text-xs font-medium mb-3">
-                  {t.certificates.issued}: {cert.issuer}
+                <p className={`text-sm font-semibold mb-3 text-transparent bg-clip-text bg-gradient-to-r ${cert.color}`}>
+                  {cert.issuer}
                 </p>
-                <div className="flex flex-wrap gap-1.5">
-                  <span className="bg-gray-100 dark:bg-slate-700/60 text-gray-600 dark:text-slate-400 text-xs px-2 py-0.5 rounded-md border border-gray-200 dark:border-slate-600/40">
+                <div className="flex flex-wrap gap-2">
+                  <span className="flex items-center gap-1 bg-gray-100 dark:bg-slate-700/60 text-gray-600 dark:text-slate-400 text-xs px-2.5 py-1 rounded-md border border-gray-200 dark:border-slate-600/40">
                     📅 {cert.date}
                   </span>
-                  <span className="bg-gray-100 dark:bg-slate-700/60 text-gray-600 dark:text-slate-400 text-xs px-2 py-0.5 rounded-md border border-gray-200 dark:border-slate-600/40">
+                  <span className="flex items-center gap-1 bg-gray-100 dark:bg-slate-700/60 text-gray-600 dark:text-slate-400 text-xs px-2.5 py-1 rounded-md border border-gray-200 dark:border-slate-600/40">
                     ⏱ {cert.duration}
                   </span>
-                  <span className="bg-gray-100 dark:bg-slate-700/60 text-gray-600 dark:text-slate-400 text-xs px-2 py-0.5 rounded-md border border-gray-200 dark:border-slate-600/40">
+                  <span className="flex items-center gap-1 bg-gray-100 dark:bg-slate-700/60 text-gray-600 dark:text-slate-400 text-xs px-2.5 py-1 rounded-md border border-gray-200 dark:border-slate-600/40">
                     📍 {cert.location}
                   </span>
                 </div>
@@ -162,21 +191,25 @@ export default function Certificates() {
       {/* Modal */}
       {selected && (
         <div
-          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in"
           onClick={() => setSelected(null)}
         >
           <div
-            className="relative max-w-2xl w-full bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-2xl"
+            className="animate-scale-in relative max-w-2xl w-full bg-white dark:bg-slate-900 rounded-2xl overflow-hidden shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              onClick={() => setSelected(null)}
-              className="absolute top-3 right-3 z-10 bg-white/90 dark:bg-slate-800/90 hover:bg-white dark:hover:bg-slate-700 text-gray-700 dark:text-slate-300 p-1.5 rounded-full border border-gray-200 dark:border-slate-600 transition-colors"
-            >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
+            {/* Modal top bar */}
+            <div className="flex items-center justify-between px-5 py-3 border-b border-gray-200 dark:border-slate-700">
+              <span className="text-sm font-semibold text-gray-700 dark:text-slate-300">Certificado</span>
+              <button
+                onClick={() => setSelected(null)}
+                className="p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 text-gray-500 dark:text-slate-400 transition-colors"
+              >
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
             <div className="relative w-full" style={{ aspectRatio: "0.77" }}>
               <Image
                 src={selected}
