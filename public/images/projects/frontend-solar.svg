@@ -1,7 +1,92 @@
-<svg width="400" height="250" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="400" height="250" fill="#f8fafc"/>
-  <rect x="50" y="50" width="300" height="150" rx="8" fill="#06b6d4" fill-opacity="0.1"/>
-  <rect x="120" y="80" width="160" height="90" rx="4" stroke="#06b6d4" stroke-width="4"/>
-  <path d="M140 140V120M170 140V100M200 140V110M230 140V90M260 140V115" stroke="#06b6d4" stroke-width="3" stroke-linecap="round"/>
-  <text x="200" y="210" text-anchor="middle" font-family="Arial" font-size="16" fill="#64748b">Frontend Energía Solar</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c1445"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="bar1" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="bar2" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="bar3" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg)"/>
+
+  <!-- Browser chrome -->
+  <rect x="40" y="30" width="720" height="380" rx="12" fill="#0f172a" stroke="#1e3a8a" stroke-width="1.5"/>
+  <rect x="40" y="30" width="720" height="40" rx="12" fill="#1e3a8a" opacity="0.7"/>
+  <rect x="40" y="58" width="720" height="12" fill="#1e3a8a" opacity="0.7"/>
+  <circle cx="68" cy="50" r="7" fill="#ef4444" opacity="0.8"/>
+  <circle cx="90" cy="50" r="7" fill="#f59e0b" opacity="0.8"/>
+  <circle cx="112" cy="50" r="7" fill="#22c55e" opacity="0.8"/>
+  <rect x="140" y="40" width="420" height="20" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <text x="350" y="54" text-anchor="middle" font-family="monospace" font-size="10" fill="#64748b">solar-dashboard.vercel.app</text>
+
+  <!-- Dashboard content -->
+  <!-- Sidebar -->
+  <rect x="40" y="70" width="140" height="340" fill="#0f172a" stroke="#1e3a8a" stroke-width="0.5"/>
+  <text x="110" y="100" text-anchor="middle" font-family="monospace" font-size="11" fill="#60a5fa" font-weight="bold">☀ SolarApp</text>
+  <rect x="55" y="115" width="110" height="28" rx="6" fill="#1e3a8a" opacity="0.8"/>
+  <text x="110" y="133" text-anchor="middle" font-family="monospace" font-size="10" fill="#93c5fd">📊 Dashboard</text>
+  <text x="110" y="165" text-anchor="middle" font-family="monospace" font-size="10" fill="#475569">⚡ Producción</text>
+  <text x="110" y="193" text-anchor="middle" font-family="monospace" font-size="10" fill="#475569">🔋 Baterías</text>
+  <text x="110" y="221" text-anchor="middle" font-family="monospace" font-size="10" fill="#475569">📈 Reportes</text>
+  <text x="110" y="249" text-anchor="middle" font-family="monospace" font-size="10" fill="#475569">⚙ Config</text>
+
+  <!-- KPI cards -->
+  <rect x="195" y="80" width="150" height="70" rx="8" fill="#1e3a8a" opacity="0.5" stroke="#3b82f6" stroke-width="1"/>
+  <text x="270" y="105" text-anchor="middle" font-family="monospace" font-size="10" fill="#93c5fd">Producción Hoy</text>
+  <text x="270" y="128" text-anchor="middle" font-family="monospace" font-size="20" fill="#60a5fa" font-weight="bold">48.2</text>
+  <text x="310" y="128" font-family="monospace" font-size="10" fill="#475569">kWh</text>
+
+  <rect x="360" y="80" width="150" height="70" rx="8" fill="#1c1917" opacity="0.7" stroke="#f59e0b" stroke-width="1"/>
+  <text x="435" y="105" text-anchor="middle" font-family="monospace" font-size="10" fill="#fcd34d">Eficiencia</text>
+  <text x="435" y="128" text-anchor="middle" font-family="monospace" font-size="20" fill="#fbbf24" font-weight="bold">94.7</text>
+  <text x="475" y="128" font-family="monospace" font-size="10" fill="#475569">%</text>
+
+  <rect x="525" y="80" width="150" height="70" rx="8" fill="#052e16" opacity="0.7" stroke="#10b981" stroke-width="1"/>
+  <text x="600" y="105" text-anchor="middle" font-family="monospace" font-size="10" fill="#6ee7b7">CO₂ Ahorrado</text>
+  <text x="600" y="128" text-anchor="middle" font-family="monospace" font-size="20" fill="#34d399" font-weight="bold">12.4</text>
+  <text x="640" y="128" font-family="monospace" font-size="10" fill="#475569">kg</text>
+
+  <!-- Chart area -->
+  <rect x="195" y="165" width="480" height="160" rx="8" fill="#0f172a" stroke="#1e3a8a" stroke-width="1"/>
+  <text x="220" y="185" font-family="monospace" font-size="10" fill="#475569">Producción semanal (kWh)</text>
+
+  <!-- Bar chart -->
+  <rect x="220" y="240" width="40" height="70" rx="3" fill="url(#bar1)" opacity="0.8"/>
+  <rect x="275" y="220" width="40" height="90" rx="3" fill="url(#bar1)" opacity="0.8"/>
+  <rect x="330" y="200" width="40" height="110" rx="3" fill="url(#bar2)" opacity="0.8"/>
+  <rect x="385" y="215" width="40" height="95" rx="3" fill="url(#bar1)" opacity="0.8"/>
+  <rect x="440" y="195" width="40" height="115" rx="3" fill="url(#bar3)" opacity="0.9"/>
+  <rect x="495" y="210" width="40" height="100" rx="3" fill="url(#bar1)" opacity="0.8"/>
+  <rect x="550" y="225" width="40" height="85" rx="3" fill="url(#bar1)" opacity="0.8"/>
+
+  <!-- X labels -->
+  <text x="240" y="325" text-anchor="middle" font-family="monospace" font-size="9" fill="#475569">Lun</text>
+  <text x="295" y="325" text-anchor="middle" font-family="monospace" font-size="9" fill="#475569">Mar</text>
+  <text x="350" y="325" text-anchor="middle" font-family="monospace" font-size="9" fill="#475569">Mié</text>
+  <text x="405" y="325" text-anchor="middle" font-family="monospace" font-size="9" fill="#475569">Jue</text>
+  <text x="460" y="325" text-anchor="middle" font-family="monospace" font-size="9" fill="#34d399">Vie</text>
+  <text x="515" y="325" text-anchor="middle" font-family="monospace" font-size="9" fill="#475569">Sáb</text>
+  <text x="570" y="325" text-anchor="middle" font-family="monospace" font-size="9" fill="#475569">Dom</text>
+
+  <!-- Bottom status -->
+  <rect x="195" y="340" width="480" height="55" rx="8" fill="#0f172a" stroke="#1e3a8a" stroke-width="1"/>
+  <circle cx="220" cy="367" r="5" fill="#22c55e"/>
+  <text x="235" y="371" font-family="monospace" font-size="10" fill="#6ee7b7">Panel A: 98%</text>
+  <circle cx="340" cy="367" r="5" fill="#22c55e"/>
+  <text x="355" y="371" font-family="monospace" font-size="10" fill="#6ee7b7">Panel B: 95%</text>
+  <circle cx="460" cy="367" r="5" fill="#f59e0b"/>
+  <text x="475" y="371" font-family="monospace" font-size="10" fill="#fbbf24">Panel C: 78%</text>
+  <circle cx="580" cy="367" r="5" fill="#22c55e"/>
+  <text x="595" y="371" font-family="monospace" font-size="10" fill="#6ee7b7">Panel D: 91%</text>
 </svg>

@@ -111,12 +111,13 @@ export default function Hero() {
             <div className="relative p-[3px] rounded-full bg-gradient-to-tr from-blue-600 via-cyan-400 to-blue-600 shadow-2xl shadow-blue-500/25">
               <div className="rounded-full overflow-hidden w-52 h-52 sm:w-64 sm:h-64 md:w-72 md:h-72 bg-gray-200 dark:bg-slate-800 relative">
                 <Image
-                  src="/images/profile.jpg"
+                  src="/profile.jpg"
                   alt="Foto de perfil de Sebastián Marcillo"
                   width={288}
                   height={288}
                   className="w-full h-full object-cover"
                   priority
+                  onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
                 />
                 {/* Fallback */}
                 <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-600 to-cyan-500">

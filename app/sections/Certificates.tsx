@@ -12,7 +12,7 @@ const certs = {
       duration: "8 horas",
       location: "Pasto, Colombia",
       emoji: "🎓",
-      image: "/images/certificado2.jpg",
+      image: "/cert2.jpg",
     },
     {
       title: "Tercer Seminario Nacional de Ingeniería de Software",
@@ -21,7 +21,7 @@ const certs = {
       duration: "8 horas",
       location: "Pasto, Colombia",
       emoji: "🏆",
-      image: "/images/certificado1.jpg",
+      image: "/cert1.jpg",
     },
   ],
   en: [
@@ -32,7 +32,7 @@ const certs = {
       duration: "8 hours",
       location: "Pasto, Colombia",
       emoji: "🎓",
-      image: "/images/certificado2.jpg",
+      image: "/cert2.jpg",
     },
     {
       title: "3rd National Software Engineering Seminar",
@@ -41,7 +41,7 @@ const certs = {
       duration: "8 hours",
       location: "Pasto, Colombia",
       emoji: "🏆",
-      image: "/images/certificado1.jpg",
+      image: "/cert1.jpg",
     },
   ],
   fr: [
@@ -52,7 +52,7 @@ const certs = {
       duration: "8 heures",
       location: "Pasto, Colombie",
       emoji: "🎓",
-      image: "/images/certificado2.jpg",
+      image: "/cert2.jpg",
     },
     {
       title: "3ème Séminaire National de Génie Logiciel",
@@ -61,7 +61,7 @@ const certs = {
       duration: "8 heures",
       location: "Pasto, Colombie",
       emoji: "🏆",
-      image: "/images/certificado1.jpg",
+      image: "/cert1.jpg",
     },
   ],
   ja: [
@@ -72,7 +72,7 @@ const certs = {
       duration: "8時間",
       location: "パスト、コロンビア",
       emoji: "🎓",
-      image: "/images/certificado2.jpg",
+      image: "/cert2.jpg",
     },
     {
       title: "第3回全国ソフトウェアエンジニアリングセミナー",
@@ -81,7 +81,7 @@ const certs = {
       duration: "8時間",
       location: "パスト、コロンビア",
       emoji: "🏆",
-      image: "/images/certificado1.jpg",
+      image: "/cert1.jpg",
     },
   ],
 };
