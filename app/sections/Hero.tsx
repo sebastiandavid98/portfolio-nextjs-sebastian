@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import { useLang } from "../context/LangContext";
+import { DownloadIcon, CodeIcon } from "../components/icons";
+import { SITE } from "../lib/config";
 
 export default function Hero() {
   const { t } = useLang();
@@ -61,29 +63,20 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div className="animate-fade-up delay-500 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-
-            {/* Primary */}
             <a
-              href="/cv.pdf"
+              href={SITE.cv}
               download
               className="group relative inline-flex items-center justify-center gap-2 bg-blue-600 text-white font-semibold px-7 py-3.5 rounded-xl overflow-hidden transition-all duration-300 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:-translate-y-1 active:scale-95"
             >
-              {/* Shine sweep */}
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out" />
-              <svg className="w-5 h-5 transition-transform duration-300 group-hover:-translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
-              </svg>
+              <DownloadIcon className="w-5 h-5 transition-transform duration-300 group-hover:-translate-y-0.5" />
               {t.hero.downloadCV}
             </a>
-
-            {/* Secondary */}
             <a
               href="#projects"
               className="group inline-flex items-center justify-center gap-2 bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm text-gray-800 dark:text-slate-200 font-semibold px-7 py-3.5 rounded-xl border border-gray-300 dark:border-slate-600 hover:border-blue-400 dark:hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:-translate-y-1 active:scale-95 hover:shadow-lg hover:shadow-blue-500/10"
             >
-              <svg className="w-5 h-5 transition-transform duration-300 group-hover:rotate-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-              </svg>
+              <CodeIcon className="w-5 h-5 transition-transform duration-300 group-hover:rotate-6" />
               {t.hero.viewProjects}
             </a>
           </div>

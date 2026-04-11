@@ -1,5 +1,6 @@
 "use client";
 import { useLang } from "../context/LangContext";
+import SectionHeader from "../components/ui/SectionHeader";
 
 const skills = [
   {
@@ -114,23 +115,16 @@ export default function About() {
 
       <div className="relative max-w-6xl mx-auto">
 
-        {/* Label */}
-        <div className="animate-slide-right flex items-center gap-3 mb-3">
-          <span className="h-px w-8 bg-blue-600" />
-          <span className="text-blue-600 dark:text-blue-400 text-sm font-semibold tracking-widest uppercase">{t.about.label}</span>
-        </div>
+        <SectionHeader
+          label={t.about.label}
+          title={t.about.title}
+          titleAccent={t.about.titleAccent}
+          className="mb-10"
+        />
 
-        {/* Top grid: text + stats */}
         <div className="grid md:grid-cols-2 gap-10 items-start mb-14">
-
           {/* Left — text */}
           <div>
-            <h2 className="animate-fade-up text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight mb-5">
-              {t.about.title}{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
-                {t.about.titleAccent}
-              </span>
-            </h2>
             <div className="animate-fade-up delay-100 space-y-3 text-gray-600 dark:text-slate-400 text-base leading-relaxed">
               <p>{t.about.p1}</p>
               <p>{t.about.p2}</p>
@@ -139,7 +133,7 @@ export default function About() {
           </div>
 
           {/* Right — stats */}
-          <div className="animate-fade-up delay-200 grid grid-cols-3 gap-4 md:mt-16">
+          <div className="animate-fade-up delay-200 grid grid-cols-3 gap-4 md:mt-4">
             {[
               { value: "5°", label: t.about.semester },
               { value: "5+", label: t.about.projects },
@@ -168,12 +162,9 @@ export default function About() {
                 style={{ animationDelay: `${0.07 * i}s` }}
                 className={`animate-fade-up group flex flex-col items-center gap-3 bg-gray-50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700/50 ${s.border} rounded-2xl p-5 cursor-default transition-all duration-300 hover:scale-105 hover:-translate-y-1 ${s.shadow} hover:shadow-xl hover:bg-white dark:hover:bg-slate-800`}
               >
-                {/* Icon container */}
                 <div className="w-16 h-16 rounded-2xl flex items-center justify-center bg-white dark:bg-slate-900 shadow-md group-hover:shadow-lg transition-shadow duration-300">
                   {s.icon}
                 </div>
-
-                {/* Name */}
                 <span className="text-gray-700 dark:text-slate-300 text-sm font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200 text-center">
                   {s.name}
                 </span>
