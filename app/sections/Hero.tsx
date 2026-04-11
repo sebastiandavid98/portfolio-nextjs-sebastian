@@ -115,7 +115,7 @@ export default function Hero() {
                   alt="Foto de perfil de Sebastián Marcillo"
                   width={288}
                   height={288}
-                  className="w-full h-full object-cover relative z-10"
+                  className="w-full h-full object-cover"
                   priority
                 />
                 {/* Fallback */}
