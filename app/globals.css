@@ -83,3 +83,14 @@ html {
   -webkit-text-fill-color: transparent;
   animation: shimmer 3s linear infinite;
 }
+
+/* Timeline scroll reveal */
+.timeline-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1);
+}
+.timeline-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
