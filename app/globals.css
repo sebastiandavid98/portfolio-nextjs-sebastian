@@ -2,60 +2,142 @@
 
 @variant dark (&:where(.dark, .dark *));
 
+/* ── Design tokens ─────────────────────────────────────────── */
 :root {
-  --background: #F9FAFB;
-  --foreground: #111827;
+  /* Backgrounds */
+  --bg-base:    #F8FAFC;
+  --bg-surface: #FFFFFF;
+  --bg-muted:   #F1F5F9;
+  --bg-subtle:  #E2E8F0;
+
+  /* Text */
+  --text-primary:   #0F172A;
+  --text-secondary: #334155;
+  --text-muted:     #64748B;
+  --text-faint:     #94A3B8;
+
+  /* Brand */
+  --brand-primary:   #3B82F6;
+  --brand-secondary: #6366F1;
+  --brand-accent:    #06B6D4;
+
+  /* Borders */
+  --border-base:    #E2E8F0;
+  --border-muted:   #CBD5E1;
+  --border-strong:  #94A3B8;
+
+  /* Shadows */
+  --shadow-sm:  0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.06);
+  --shadow-md:  0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.07);
+  --shadow-lg:  0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
+  --shadow-xl:  0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.08);
+  --shadow-brand: 0 8px 24px -4px rgb(59 130 246 / 0.25);
 }
 
 .dark {
-  --background: #0F172A;
-  --foreground: #F1F5F9;
+  /* Backgrounds */
+  --bg-base:    #0F172A;
+  --bg-surface: #1E293B;
+  --bg-muted:   #162032;
+  --bg-subtle:  #1E293B;
+
+  /* Text */
+  --text-primary:   #F1F5F9;
+  --text-secondary: #CBD5E1;
+  --text-muted:     #94A3B8;
+  --text-faint:     #475569;
+
+  /* Brand */
+  --brand-primary:   #60A5FA;
+  --brand-secondary: #818CF8;
+  --brand-accent:    #22D3EE;
+
+  /* Borders */
+  --border-base:   #1E293B;
+  --border-muted:  #334155;
+  --border-strong: #475569;
+
+  /* Shadows */
+  --shadow-sm:  0 1px 3px 0 rgb(0 0 0 / 0.3);
+  --shadow-md:  0 4px 6px -1px rgb(0 0 0 / 0.35);
+  --shadow-lg:  0 10px 15px -3px rgb(0 0 0 / 0.4);
+  --shadow-xl:  0 20px 25px -5px rgb(0 0 0 / 0.45);
+  --shadow-brand: 0 8px 24px -4px rgb(96 165 250 / 0.2);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
-}
-
+/* ── Base styles ───────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
 }
 
-/* Fade-up animation */
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-geist-sans), system-ui, Arial, sans-serif;
+  /* Smooth theme transition */
+  transition: background-color 0.4s ease, color 0.3s ease;
+}
+
+/* Transition all color-related properties on theme change */
+*,
+*::before,
+*::after {
+  transition-property: background-color, border-color, color, box-shadow, opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+/* But NOT layout/transform transitions (would break animations) */
+.no-theme-transition,
+.no-theme-transition * {
+  transition: none !important;
+}
+
+/* ── Utility classes using tokens ──────────────────────────── */
+.bg-base    { background-color: var(--bg-base); }
+.bg-surface { background-color: var(--bg-surface); }
+.bg-muted   { background-color: var(--bg-muted); }
+
+.text-primary   { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted-token { color: var(--text-muted); }
+
+.border-base  { border-color: var(--border-base); }
+.border-muted { border-color: var(--border-muted); }
+
+/* ── Animations ────────────────────────────────────────────── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
-
 @keyframes slideRight {
   from { opacity: 0; transform: translateX(-20px); }
   to   { opacity: 1; transform: translateX(0); }
 }
-
 @keyframes scaleIn {
   from { opacity: 0; transform: scale(0.88); }
   to   { opacity: 1; transform: scale(1); }
 }
-
 @keyframes floatY {
   0%, 100% { transform: translateY(0px); }
   50%       { transform: translateY(-10px); }
 }
-
 @keyframes pulseGlow {
   0%, 100% { opacity: 0.15; transform: scale(1); }
   50%       { opacity: 0.3;  transform: scale(1.08); }
 }
-
 @keyframes shimmer {
   0%   { background-position: -200% center; }
   100% { background-position:  200% center; }
+}
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .animate-fade-up     { animation: fadeUp     0.7s cubic-bezier(0.22,1,0.36,1) both; }
@@ -76,12 +158,19 @@ html {
 
 /* Shimmer text */
 .text-shimmer {
-  background: linear-gradient(90deg, #2563eb, #06b6d4, #2563eb);
+  background: linear-gradient(90deg, #3b82f6, #6366f1, #06b6d4, #3b82f6);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shimmer 3s linear infinite;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Animated gradient background */
+.bg-animated-gradient {
+  background: linear-gradient(-45deg, #3b82f6, #6366f1, #06b6d4, #8b5cf6);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
 }
 
 /* Timeline scroll reveal */
@@ -94,3 +183,18 @@ html {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Card hover glow */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl), 0 0 0 1px rgb(59 130 246 / 0.15);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-muted); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border-strong); }
