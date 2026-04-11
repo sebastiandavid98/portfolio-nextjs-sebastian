@@ -60,7 +60,7 @@ export default function Hero() {
             <div className="relative p-1 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 shadow-2xl">
               <div className="rounded-full overflow-hidden w-52 h-52 sm:w-64 sm:h-64 md:w-72 md:h-72 bg-gray-200 dark:bg-slate-800 relative">
                 <Image
-                  src="/imagenes/profile.jpg"
+                  src="/images/profile.jpg"
                   alt="Foto de perfil de Sebastián Marcillo"
                   width={288}
                   height={288}

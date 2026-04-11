@@ -18,6 +18,22 @@ const academic = {
       description: "Currently in 5th semester. Key subjects: Algorithms, Databases, Requirements Engineering, Web Development and Object-Oriented Programming.",
     },
   ],
+  fr: [
+    {
+      title: "Génie Logiciel",
+      place: "Universidad Cooperativa de Colombia",
+      date: "2022 — Présent",
+      description: "En 5ème semestre. Matières principales : Algorithmes, Bases de Données, Génie des Exigences, Développement Web et Programmation Orientée Objet.",
+    },
+  ],
+  ja: [
+    {
+      title: "ソフトウェアエンジニアリング",
+      place: "Universidad Cooperativa de Colombia",
+      date: "2022 — 現在",
+      description: "5学期在学中。主要科目：アルゴリズム、データベース、要件工学、Web開発、オブジェクト指向プログラミング。",
+    },
+  ],
 };
 
 const work = {
@@ -59,6 +75,46 @@ const work = {
       place: "Universidad Cooperativa de Colombia",
       date: "October 2025",
       description: "Participation in the national seminar, 8 hours duration. Pasto campus.",
+    },
+  ],
+  fr: [
+    {
+      title: "Développeur Web Freelance",
+      place: "Indépendant",
+      date: "2023 — Présent",
+      description: "Conception et développement de sites web et d'applications pour des clients. Stack principal : Next.js, Tailwind CSS et Node.js.",
+    },
+    {
+      title: "2ème Séminaire National de Génie Logiciel",
+      place: "Universidad Cooperativa de Colombia",
+      date: "Mai 2025",
+      description: "Participation au séminaire national d'une durée de 8 heures. Campus de Pasto.",
+    },
+    {
+      title: "3ème Séminaire National de Génie Logiciel",
+      place: "Universidad Cooperativa de Colombia",
+      date: "Octobre 2025",
+      description: "Participation au séminaire national d'une durée de 8 heures. Campus de Pasto.",
+    },
+  ],
+  ja: [
+    {
+      title: "フリーランスWebデベロッパー",
+      place: "独立",
+      date: "2023 — 現在",
+      description: "クライアント向けのWebサイトとアプリケーションの設計・開発。主なスタック：Next.js、Tailwind CSS、Node.js。",
+    },
+    {
+      title: "第2回全国ソフトウェアエンジニアリングセミナー",
+      place: "Universidad Cooperativa de Colombia",
+      date: "2025年5月",
+      description: "8時間のセミナーに参加。パスト校にて開催。",
+    },
+    {
+      title: "第3回全国ソフトウェアエンジニアリングセミナー",
+      place: "Universidad Cooperativa de Colombia",
+      date: "2025年10月",
+      description: "8時間のセミナーに参加。パスト校にて開催。",
     },
   ],
 };
@@ -106,12 +162,12 @@ export default function Experience() {
           <TimelineColumn
             label={t.experience.academic}
             icon={<svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0v6m-4-3.5l4 2 4-2" /></svg>}
-            items={academic[lang]}
+            items={academic[lang] ?? academic.en}
           />
           <TimelineColumn
             label={t.experience.work}
             icon={<svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>}
-            items={work[lang]}
+            items={work[lang] ?? work.en}
           />
         </div>
       </div>

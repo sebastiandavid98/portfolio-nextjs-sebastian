@@ -12,7 +12,7 @@ const certs = {
       duration: "8 horas",
       location: "Pasto, Colombia",
       emoji: "🎓",
-      image: "/imagenes/certificado2.jpg",
+      image: "/images/certificado2.jpg",
     },
     {
       title: "Tercer Seminario Nacional de Ingeniería de Software",
@@ -21,7 +21,7 @@ const certs = {
       duration: "8 horas",
       location: "Pasto, Colombia",
       emoji: "🏆",
-      image: "/imagenes/certificado1.jpg",
+      image: "/images/certificado1.jpg",
     },
   ],
   en: [
@@ -32,7 +32,7 @@ const certs = {
       duration: "8 hours",
       location: "Pasto, Colombia",
       emoji: "🎓",
-      image: "/imagenes/certificado2.jpg",
+      image: "/images/certificado2.jpg",
     },
     {
       title: "3rd National Software Engineering Seminar",
@@ -41,14 +41,54 @@ const certs = {
       duration: "8 hours",
       location: "Pasto, Colombia",
       emoji: "🏆",
-      image: "/imagenes/certificado1.jpg",
+      image: "/images/certificado1.jpg",
+    },
+  ],
+  fr: [
+    {
+      title: "2ème Séminaire National de Génie Logiciel",
+      issuer: "Universidad Cooperativa de Colombia",
+      date: "28 mai 2025",
+      duration: "8 heures",
+      location: "Pasto, Colombie",
+      emoji: "🎓",
+      image: "/images/certificado2.jpg",
+    },
+    {
+      title: "3ème Séminaire National de Génie Logiciel",
+      issuer: "Universidad Cooperativa de Colombia",
+      date: "17 octobre 2025",
+      duration: "8 heures",
+      location: "Pasto, Colombie",
+      emoji: "🏆",
+      image: "/images/certificado1.jpg",
+    },
+  ],
+  ja: [
+    {
+      title: "第2回全国ソフトウェアエンジニアリングセミナー",
+      issuer: "Universidad Cooperativa de Colombia",
+      date: "2025年5月28日",
+      duration: "8時間",
+      location: "パスト、コロンビア",
+      emoji: "🎓",
+      image: "/images/certificado2.jpg",
+    },
+    {
+      title: "第3回全国ソフトウェアエンジニアリングセミナー",
+      issuer: "Universidad Cooperativa de Colombia",
+      date: "2025年10月17日",
+      duration: "8時間",
+      location: "パスト、コロンビア",
+      emoji: "🏆",
+      image: "/images/certificado1.jpg",
     },
   ],
 };
 
 export default function Certificates() {
   const { t, lang } = useLang();
-  const list = certs[lang];
+  const list = certs[lang] ?? certs.es;
   const [selected, setSelected] = useState<string | null>(null);
 
   return (
