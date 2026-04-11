@@ -91,7 +91,7 @@ export default function Projects() {
                     {project.demo && (
                       <a href={project.demo} target="_blank" rel="noopener noreferrer"
                         className="flex items-center gap-1.5 bg-blue-600/90 hover:bg-blue-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors duration-200">
-                        <ExternalIcon /> Demo
+                        <ExternalLinkIcon className="w-3.5 h-3.5" /> Demo
                       </a>
                     )}
                   </div>
@@ -126,7 +126,7 @@ export default function Projects() {
                   {project.demo && (
                     <a href={project.demo} target="_blank" rel="noopener noreferrer"
                       className="flex items-center gap-1.5 text-white text-sm font-medium bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-lg transition-all duration-300 flex-1 justify-center shadow-md shadow-blue-500/20">
-                      <ExternalIcon />{t.projects.demo}
+                      <ExternalLinkIcon />{t.projects.demo}
                     </a>
                   )}
                 </div>
