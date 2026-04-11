@@ -9,7 +9,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-12 overflow-hidden">
 
       {/* ── Gradient background ── */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-blue-50/40 to-cyan-50/30 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 -z-10" />
+      <div className="absolute inset-0 -z-10" style={{ background: "var(--gradient-hero)" }} />
 
       {/* Grid pattern overlay */}
       <div
@@ -109,20 +109,14 @@ export default function Hero() {
 
             {/* Gradient border */}
             <div className="relative p-[3px] rounded-full bg-gradient-to-tr from-blue-600 via-cyan-400 to-blue-600 shadow-2xl shadow-blue-500/25">
-              <div className="rounded-full overflow-hidden w-52 h-52 sm:w-64 sm:h-64 md:w-72 md:h-72 bg-gray-200 dark:bg-slate-800 relative">
+              <div className="rounded-full overflow-hidden w-52 h-52 sm:w-64 sm:h-64 md:w-72 md:h-72 bg-gradient-to-br from-blue-600 to-cyan-500 relative">
                 <Image
-                  src="/profile.jpg"
+                  src="/images/profile.jpg"
                   alt="Foto de perfil de Sebastián Marcillo"
-                  width={288}
-                  height={288}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover object-center z-10 relative"
                   priority
-                  onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
                 />
-                {/* Fallback */}
-                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-600 to-cyan-500">
-                  <span className="text-white font-extrabold text-6xl select-none">S</span>
-                </div>
               </div>
             </div>
 
