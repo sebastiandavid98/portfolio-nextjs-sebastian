@@ -32,14 +32,6 @@ export default function Hero() {
         {/* ── Text content ── */}
         <div className="flex-1 text-center md:text-left">
 
-          {/* Badge */}
-          <div className="animate-fade-up delay-100">
-            <span className="inline-flex items-center gap-2 bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-500/30 text-sm font-medium px-4 py-1.5 rounded-full mb-5">
-              <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-              {t.hero.badge}
-            </span>
-          </div>
-
           {/* Name */}
           <h1 className="animate-fade-up delay-200 text-5xl sm:text-6xl lg:text-7xl font-extrabold text-gray-900 dark:text-white leading-tight tracking-tight mb-3">
             Sebastián
@@ -113,16 +105,6 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Open to work badge */}
-            <div className="animate-fade-in delay-700 absolute -bottom-3 -right-3 flex items-center gap-1.5 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-gray-800 dark:text-slate-200 text-xs font-semibold px-3 py-1.5 rounded-full shadow-lg">
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              {t.hero.openToWork}
-            </div>
-
-            {/* Floating tech pill */}
-            <div className="animate-fade-in delay-600 absolute -top-2 -left-6 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-xs font-semibold px-3 py-1.5 rounded-full shadow-lg text-gray-700 dark:text-slate-300">
-              Next.js ⚡
-            </div>
           </div>
         </div>
 

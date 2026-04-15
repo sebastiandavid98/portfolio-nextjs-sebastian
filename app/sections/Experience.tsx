@@ -6,8 +6,8 @@ type Item = { title: string; place: string; date: string; description: string; t
 
 const items: Record<string, Item[]> = {
   es: [
-    { type: "academic", title: "Bachillerato", place: "Institución Educativa", date: "2016 – 2021", description: "Formación secundaria con énfasis en ciencias exactas y primer acercamiento a la programación." },
-    { type: "academic", title: "Ingeniería de Software", place: "Universidad Cooperativa de Colombia", date: "2022 – Presente", description: "Cursando el 5° semestre. Materias: Algoritmos, Bases de Datos, Ingeniería de Requisitos, Desarrollo Web y POO." },
+    { type: "academic", title: "Bachillerato", place: "Institución Educativa", date: "2021 – 2022", description: "Estudios correspondientes al nivel de educación básica y media técnica, con énfasis en el uso apropiado de herramientas tecnológicas y metodologías flexibles en formación." },
+    { type: "academic", title: "Ingeniería de Software", place: "Universidad Cooperativa de Colombia", date: "2023 – Presente", description: "Cursando el 5° semestre. Materias: Algoritmos, Bases de Datos, Ingeniería de Requisitos, Desarrollo Web y POO." },
     { type: "work", title: "Desarrollador Web Freelance", place: "Independiente", date: "2023 – Presente", description: "Diseño y desarrollo de sitios web y aplicaciones para clientes. Stack: Next.js, Tailwind CSS y Node.js." },
     { type: "work", title: "2° Seminario Nacional de Ing. de Software", place: "Universidad Cooperativa de Colombia", date: "Mayo 2025", description: "Participación en el seminario nacional con duración de 8 horas. Sede Pasto." },
     { type: "work", title: "3° Seminario Nacional de Ing. de Software", place: "Universidad Cooperativa de Colombia", date: "Octubre 2025", description: "Participación en el seminario nacional con duración de 8 horas. Sede Pasto." },

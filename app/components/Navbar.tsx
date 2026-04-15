@@ -30,7 +30,7 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-gray-200/50 dark:border-slate-700/50">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#" className="font-extrabold text-lg text-gray-900 dark:text-white tracking-tight">
-          S.<span className="text-blue-600">dev</span>
+          Sebastián <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Marcillo</span>
         </a>
 
         {/* Desktop nav */}
