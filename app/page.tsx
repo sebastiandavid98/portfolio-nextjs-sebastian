@@ -5,6 +5,7 @@ import Experience from "./sections/Experience";
 import Projects from "./sections/Projects";
 import Certificates from "./sections/Certificates";
 import Testimonials from "./sections/Testimonials";
+import Hobbies from "./sections/Hobbies";
 import Contact from "./sections/Contact";
 import Footer from "./components/Footer";
 import Chatbot from "./components/Chatbot";
@@ -20,6 +21,7 @@ export default function Home() {
         <Projects />
         <Certificates />
         <Testimonials />
+        <Hobbies />
         <Contact />
       </main>
       <Footer />
