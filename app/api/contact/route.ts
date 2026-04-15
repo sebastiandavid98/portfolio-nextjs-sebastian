@@ -2,9 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { getSupabaseClient } from "../../../lib/supabase";
 import { Resend } from "resend";
 
-// ── Resend client ────────────────────────────────────────────
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 // ── Types ────────────────────────────────────────────────────
 type ContactInsert = { name: string; email: string; message: string };
 type MemoryEntry   = ContactInsert & { id: string; created_at: string };
@@ -88,8 +85,10 @@ export async function POST(req: NextRequest) {
 
   if (resendKey) {
     try {
-      const emailResponse = await resend.emails.send({
-        from: "Portafolio <onboarding@resend.dev>",   // dominio verificado en Resend
+      // Instantiate inside the handler so build time doesn't crash
+      // when RESEND_API_KEY is not available during static analysis
+      const resend = new Resend(resendKey);
+      const emailResponse = await resend.emails.send({        from: "Portafolio <onboarding@resend.dev>",   // dominio verificado en Resend
         to:   ["barbasel98@gmail.com"],                // tu correo real
         replyTo: data.email,                           // reply va al remitente
         subject: `📬 Nuevo mensaje de ${data.name}`,
