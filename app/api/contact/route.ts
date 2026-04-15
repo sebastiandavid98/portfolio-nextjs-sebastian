@@ -1,27 +1,24 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabase } from "../../../lib/supabase";
+import { getSupabaseClient } from "../../../lib/supabase";
 
 // ── Types ────────────────────────────────────────────────────
-type ContactEntry = {
-  id: string;
+type ContactInsert = {
   name: string;
   email: string;
   message: string;
-  created_at: string;
 };
 
-// ── In-memory fallback (when Supabase is not configured) ─────
-const memoryStore: ContactEntry[] = [];
+// ── In-memory fallback (dev without Supabase configured) ─────
+type MemoryEntry = ContactInsert & { id: string; created_at: string };
+const memoryStore: MemoryEntry[] = [];
 
 // ── Validation ───────────────────────────────────────────────
 function validate(body: unknown): {
   errors: string[];
-  name: string;
-  email: string;
-  message: string;
+  data: ContactInsert | null;
 } {
   if (!body || typeof body !== "object") {
-    return { errors: ["Cuerpo de la solicitud inválido."], name: "", email: "", message: "" };
+    return { errors: ["Cuerpo de la solicitud inválido."], data: null };
   }
 
   const raw = body as Record<string, unknown>;
@@ -30,17 +27,20 @@ function validate(body: unknown): {
   const message = String(raw.message ?? "").trim();
   const errors: string[] = [];
 
-  if (!name || name.length < 2)    errors.push("El nombre debe tener al menos 2 caracteres.");
-  if (name.length > 100)           errors.push("El nombre no puede superar los 100 caracteres.");
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push("El email no es válido.");
+  if (!name || name.length < 2)   errors.push("El nombre debe tener al menos 2 caracteres.");
+  if (name.length > 100)          errors.push("El nombre no puede superar los 100 caracteres.");
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
+                                  errors.push("El email no es válido.");
   if (!message || message.length < 10)  errors.push("El mensaje debe tener al menos 10 caracteres.");
-  if (message.length > 2000)       errors.push("El mensaje no puede superar los 2000 caracteres.");
+  if (message.length > 2000)      errors.push("El mensaje no puede superar los 2000 caracteres.");
 
-  return { errors, name, email, message };
+  if (errors.length > 0) return { errors, data: null };
+  return { errors: [], data: { name, email, message } };
 }
 
 // ── POST /api/contact ────────────────────────────────────────
 export async function POST(req: NextRequest) {
+  // Content-Type guard
   const contentType = req.headers.get("content-type") ?? "";
   if (!contentType.includes("application/json")) {
     return NextResponse.json(
@@ -49,6 +49,7 @@ export async function POST(req: NextRequest) {
     );
   }
 
+  // Parse body
   let body: unknown;
   try {
     body = await req.json();
@@ -59,35 +60,34 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const { errors, name, email, message } = validate(body);
-  if (errors.length > 0) {
+  // Validate
+  const { errors, data } = validate(body);
+  if (errors.length > 0 || !data) {
     return NextResponse.json({ ok: false, errors }, { status: 400 });
   }
 
-  // ── Save to Supabase ────────────────────────────────────────
-  const supabaseConfigured =
-    process.env.NEXT_PUBLIC_SUPABASE_URL &&
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  // Persist
+  const client = getSupabaseClient();
 
-  if (supabaseConfigured) {
-    const { error } = await supabase
+  if (client) {
+    // ── Supabase ──────────────────────────────────────────────
+    const { error } = await client
       .from("contacts")
-      .insert([{ name, email, message }]);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .insert(data as any);
 
     if (error) {
+      // Log server-side only — never expose DB errors to the client
       console.error("[Supabase] Insert error:", error.message);
-      // Don't expose DB errors to the client — still return success
-      // so the user experience is not broken
     }
   } else {
-    // Fallback: in-memory store for local dev without Supabase
+    // ── In-memory fallback (local dev) ────────────────────────
     memoryStore.push({
+      ...data,
       id: crypto.randomUUID(),
-      name,
-      email,
-      message,
       created_at: new Date().toISOString(),
     });
+    console.info("[Contact API] Saved to memory store (Supabase not configured).");
   }
 
   return NextResponse.json(
@@ -96,14 +96,12 @@ export async function POST(req: NextRequest) {
   );
 }
 
-// ── GET /api/contact (dev utility) ──────────────────────────
+// ── GET /api/contact (dev utility — disable in production) ───
 export async function GET() {
-  const supabaseConfigured =
-    process.env.NEXT_PUBLIC_SUPABASE_URL &&
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const client = getSupabaseClient();
 
-  if (supabaseConfigured) {
-    const { data, error } = await supabase
+  if (client) {
+    const { data, error } = await client
       .from("contacts")
       .select("*")
       .order("created_at", { ascending: false });
@@ -119,6 +117,6 @@ export async function GET() {
     ok: true,
     count: memoryStore.length,
     data: memoryStore,
-    note: "Using in-memory store. Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY to enable Supabase.",
+    note: "In-memory store active. Configure NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY to enable Supabase.",
   });
 }
