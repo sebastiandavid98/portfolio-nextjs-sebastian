@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useLang } from "../context/LangContext";
 import { GitHubIcon, LinkedInIcon, WhatsAppIcon, SendIcon, SpinnerIcon, CheckIcon, AlertIcon } from "../components/icons";
 import { SITE } from "../lib/config";
+import SectionHeader from "../components/ui/SectionHeader";
 
 const socials = [
   { label: "GitHub",    href: SITE.github,   icon: <GitHubIcon className="w-4 h-4" /> },

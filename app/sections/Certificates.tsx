@@ -2,6 +2,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useLang } from "../context/LangContext";
+import SectionHeader from "../components/ui/SectionHeader";
+import { CloseIcon, EyeIcon } from "../components/icons";
 
 const certs = {
   es: [
@@ -114,18 +116,12 @@ export default function Certificates() {
       <div className="relative max-w-6xl mx-auto">
 
         {/* Header */}
-        <div className="animate-slide-right flex items-center gap-3 mb-3">
-          <span className="h-px w-8 bg-blue-600" />
-          <span className="text-blue-600 dark:text-blue-400 text-sm font-semibold tracking-widest uppercase">
-            {t.certificates.label}
-          </span>
-        </div>
-        <h2 className="animate-fade-up text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight mb-12">
-          {t.certificates.title}{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
-            {t.certificates.titleAccent}
-          </span>
-        </h2>
+        <SectionHeader
+          label={t.certificates.label}
+          title={t.certificates.title}
+          titleAccent={t.certificates.titleAccent}
+          className="mb-12"
+        />
 
         {/* Cards */}
         <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
@@ -151,10 +147,7 @@ export default function Certificates() {
                 {/* View badge */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <span className="flex items-center gap-2 bg-white/95 dark:bg-slate-900/95 text-gray-800 dark:text-white text-sm font-semibold px-4 py-2 rounded-full shadow-lg">
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
-                    </svg>
+                    <EyeIcon className="w-4 h-4" />
                     Ver certificado
                   </span>
                 </div>
@@ -205,9 +198,7 @@ export default function Certificates() {
                 onClick={() => setSelected(null)}
                 className="p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-800 text-gray-500 dark:text-slate-400 transition-colors"
               >
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
+                <CloseIcon className="w-5 h-5" />
               </button>
             </div>
             <div className="relative w-full" style={{ aspectRatio: "0.77" }}>
