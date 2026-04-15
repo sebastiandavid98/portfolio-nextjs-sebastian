@@ -104,6 +104,99 @@ const skills = [
       </svg>
     ),
   },
+  {
+    name: "MySQL",
+    bg: "bg-blue-700",
+    shadow: "hover:shadow-blue-600/30",
+    border: "hover:border-blue-500/60",
+    icon: (
+      <svg viewBox="0 0 32 32" className="w-8 h-8" fill="none">
+        <rect width="32" height="32" rx="4" fill="#00618A"/>
+        <path d="M8 20h16M8 16h16M8 12h16" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+        <ellipse cx="16" cy="10" rx="8" ry="3" stroke="#F29111" strokeWidth="1.5" fill="none"/>
+        <path d="M8 10v12c0 1.7 3.6 3 8 3s8-1.3 8-3V10" stroke="#F29111" strokeWidth="1.5" fill="none"/>
+      </svg>
+    ),
+  },
+  {
+    name: "XAMPP",
+    bg: "bg-orange-600",
+    shadow: "hover:shadow-orange-500/30",
+    border: "hover:border-orange-400/60",
+    icon: (
+      <svg viewBox="0 0 32 32" className="w-8 h-8" fill="none">
+        <rect width="32" height="32" rx="4" fill="#FB7A24"/>
+        <path d="M7 10l5 6-5 6h4l3-4 3 4h4l-5-6 5-6h-4l-3 4-3-4H7z" fill="white"/>
+      </svg>
+    ),
+  },
+  {
+    name: "Python",
+    bg: "bg-blue-600",
+    shadow: "hover:shadow-blue-500/30",
+    border: "hover:border-yellow-400/60",
+    icon: (
+      <svg viewBox="0 0 32 32" className="w-8 h-8" fill="none">
+        <rect width="32" height="32" rx="4" fill="#3776AB"/>
+        <path d="M16 5c-4.4 0-6.5 2-6.5 4.5V12h6.5v1H8c-2.5 0-4 1.5-4 5s1.5 5 4 5h2v-3c0-2.5 2-4.5 4.5-4.5h5.5c2 0 3.5-1.5 3.5-3.5V9.5C23.5 7 21.5 5 16 5zm-1.5 2.5a1 1 0 110 2 1 1 0 010-2z" fill="#FFD43B"/>
+        <path d="M16 27c4.4 0 6.5-2 6.5-4.5V20H16v-1h10c2.5 0 4-1.5 4-5s-1.5-5-4-5h-2v3c0 2.5-2 4.5-4.5 4.5H14c-2 0-3.5 1.5-3.5 3.5v4c0 2.5 2 4.5 5.5 4.5zm1.5-2.5a1 1 0 110-2 1 1 0 010 2z" fill="white"/>
+      </svg>
+    ),
+  },
+  {
+    name: "Java",
+    bg: "bg-red-600",
+    shadow: "hover:shadow-red-500/30",
+    border: "hover:border-red-400/60",
+    icon: (
+      <svg viewBox="0 0 32 32" className="w-8 h-8" fill="none">
+        <rect width="32" height="32" rx="4" fill="#E76F00"/>
+        <path d="M12.5 20.5s-1.2.7.9 1c2.4.3 3.6.2 6.2-.3 0 0 .7.4 1.6.8-5.6 2.4-12.7-.1-8.7-1.5zM11.8 18s-1.4 1 .8 1.2c2 .2 3.6.2 6.4-.2 0 0 .5.5 1.3.7-5.6 1.6-11.8.2-8.5-1.7z" fill="white"/>
+        <path d="M16.5 11c1.6 1.8-.8 3.4-.8 3.4s3.6-1.8 2-4.1c-1.6-2.2-2.8-3.2 4-6.8 0 0-10.8 2.7-5.2 7.5z" fill="#F8981D"/>
+        <path d="M20 22.5s.9.7-1 1.3c-3.6 1.1-14.8 1.4-17.9 0-1.1-.5 1-.1 1.6-.1.6 0 1 0 1 0-1.2-.8-7.6 1.6-3.2 2.3 11.8 1.9 21.5-.8 19.5-2.2v-.3z" fill="white"/>
+      </svg>
+    ),
+  },
+  {
+    name: "HTML",
+    bg: "bg-orange-500",
+    shadow: "hover:shadow-orange-400/30",
+    border: "hover:border-orange-400/60",
+    icon: (
+      <svg viewBox="0 0 32 32" className="w-8 h-8" fill="none">
+        <rect width="32" height="32" rx="4" fill="#E34F26"/>
+        <path d="M7 5l1.8 20 7.2 2 7.2-2L25 5H7zm13.5 5.5H12l.2 2.5h8l-.7 7.5-3.5 1-3.5-1-.2-2.5h2.5l.1 1.2 1.1.3 1.1-.3.2-2H11.5l-.6-7H21l-.5 3z" fill="white"/>
+      </svg>
+    ),
+  },
+  {
+    name: "CSS",
+    bg: "bg-blue-500",
+    shadow: "hover:shadow-blue-400/30",
+    border: "hover:border-blue-400/60",
+    icon: (
+      <svg viewBox="0 0 32 32" className="w-8 h-8" fill="none">
+        <rect width="32" height="32" rx="4" fill="#1572B6"/>
+        <path d="M7 5l1.8 20 7.2 2 7.2-2L25 5H7zm13.5 5.5H12l.2 2.5h8.8l-.7 4H14l.2 2.5 1.8.5 1.8-.5.1-1.5h2.5l-.3 3.5-3.8 1-3.8-1-.5-5.5h2.5l.1 1.2 1.7.5 1.7-.5.2-2H11.5l-.6-7H21l-.5 3z" fill="white"/>
+      </svg>
+    ),
+  },
+  {
+    name: "Figma",
+    bg: "bg-purple-600",
+    shadow: "hover:shadow-purple-500/30",
+    border: "hover:border-purple-400/60",
+    icon: (
+      <svg viewBox="0 0 32 32" className="w-8 h-8" fill="none">
+        <rect width="32" height="32" rx="4" fill="#1E1E1E"/>
+        <path d="M12 26a4 4 0 004-4v-4h-4a4 4 0 000 8z" fill="#0ACF83"/>
+        <path d="M8 14a4 4 0 014-4h4v8h-4a4 4 0 01-4-4z" fill="#A259FF"/>
+        <path d="M8 6a4 4 0 014-4h4v8h-4A4 4 0 018 6z" fill="#F24E1E"/>
+        <path d="M16 2h4a4 4 0 010 8h-4V2z" fill="#FF7262"/>
+        <path d="M24 14a4 4 0 11-8 0 4 4 0 018 0z" fill="#1ABCFE"/>
+      </svg>
+    ),
+  },
 ];
 
 export default function About() {
