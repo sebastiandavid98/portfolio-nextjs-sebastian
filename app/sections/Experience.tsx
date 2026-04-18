@@ -294,7 +294,7 @@ export default function Experience() {
   const items = timeline[lang] ?? timeline.es;
 
   return (
-    <section id="experience" className="relative bg-gray-50 dark:bg-slate-900 py-20 px-6 overflow-hidden">
+    <section id="experience" className="relative bg-gray-50 dark:bg-slate-900 py-14 px-6 overflow-hidden">
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-50 dark:bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto">
@@ -307,7 +307,7 @@ export default function Experience() {
         />
 
         {/* Year range */}
-        <div className="animate-fade-up delay-100 flex items-center gap-3 mb-12">
+        <div className="animate-fade-up delay-100 flex items-center gap-3 mb-8">
           <span className="text-gray-400 dark:text-slate-500 text-sm font-medium">2022</span>
           <div className="flex-1 h-px bg-gradient-to-r from-gray-300 via-blue-400 to-violet-400 dark:from-slate-700 dark:via-blue-500 dark:to-violet-500" />
           <span className="text-blue-600 dark:text-blue-400 text-sm font-semibold">2026</span>

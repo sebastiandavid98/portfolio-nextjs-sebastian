@@ -110,7 +110,7 @@ export default function Certificates() {
   const [selected, setSelected] = useState<string | null>(null);
 
   return (
-    <section id="certificates" className="relative bg-gray-50 dark:bg-slate-900 py-20 px-6 overflow-hidden">
+    <section id="certificates" className="relative bg-gray-50 dark:bg-slate-900 py-14 px-6 overflow-hidden">
       <div className="absolute top-0 left-0 w-80 h-80 bg-blue-50 dark:bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto">
@@ -120,7 +120,7 @@ export default function Certificates() {
           label={t.certificates.label}
           title={t.certificates.title}
           titleAccent={t.certificates.titleAccent}
-          className="mb-12"
+          className="mb-8"
         />
 
         {/* Cards */}

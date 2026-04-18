@@ -203,7 +203,7 @@ export default function About() {
   const { t } = useLang();
 
   return (
-    <section id="about" className="relative bg-white dark:bg-slate-950 py-20 px-6 overflow-hidden">
+    <section id="about" className="relative bg-white dark:bg-slate-950 py-14 px-6 overflow-hidden">
       <div className="absolute top-0 right-0 w-72 h-72 bg-blue-50 dark:bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto">
@@ -215,7 +215,7 @@ export default function About() {
           className="mb-10"
         />
 
-        <div className="grid md:grid-cols-2 gap-10 items-start mb-14">
+        <div className="grid md:grid-cols-2 gap-10 items-start mb-10">
           {/* Left — text */}
           <div>
             <div className="animate-fade-up delay-100 space-y-3 text-gray-600 dark:text-slate-400 text-base leading-relaxed">

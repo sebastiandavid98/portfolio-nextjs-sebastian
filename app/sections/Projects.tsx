@@ -43,7 +43,7 @@ export default function Projects() {
   const list = projects[lang] ?? projects.es;
 
   return (
-    <section id="projects" className="relative bg-white dark:bg-slate-950 py-20 px-6 overflow-hidden">
+    <section id="projects" className="relative bg-white dark:bg-slate-950 py-14 px-6 overflow-hidden">
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-cyan-50 dark:bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto">

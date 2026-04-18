@@ -82,7 +82,7 @@ export default function Testimonials() {
   const t = testimonials[active];
 
   return (
-    <section id="testimonials" className="relative bg-white dark:bg-slate-950 py-20 px-6 overflow-hidden">
+    <section id="testimonials" className="relative bg-white dark:bg-slate-950 py-14 px-6 overflow-hidden">
       {/* Decorative blobs */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-blue-100/50 dark:bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -93,7 +93,7 @@ export default function Testimonials() {
           <span className="h-px w-8 bg-blue-600" />
           <span className="text-blue-600 dark:text-blue-400 text-sm font-semibold tracking-widest uppercase">Testimonios</span>
         </div>
-        <h2 className="animate-fade-up text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight mb-12">
+        <h2 className="animate-fade-up text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight mb-8">
           Lo que dicen{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">de mí</span>
         </h2>
