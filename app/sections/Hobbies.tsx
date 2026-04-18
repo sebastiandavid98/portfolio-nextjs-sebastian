@@ -1,92 +1,78 @@
 "use client";
+import { useState, useEffect } from "react";
 
 const hobbies = [
-  {
-    label: "Voleibol",
-    emoji: "🏐",
-    color: "from-yellow-400 to-orange-400",
-    bg: "hover:bg-yellow-50 dark:hover:bg-yellow-500/10",
-    border: "hover:border-yellow-400/60 dark:hover:border-yellow-500/40",
-    shadow: "hover:shadow-yellow-400/20",
-    desc: "Deporte en equipo",
-  },
-  {
-    label: "Ping Pong",
-    emoji: "🏓",
-    color: "from-blue-400 to-cyan-400",
-    bg: "hover:bg-blue-50 dark:hover:bg-blue-500/10",
-    border: "hover:border-blue-400/60 dark:hover:border-blue-500/40",
-    shadow: "hover:shadow-blue-400/20",
-    desc: "Reflejos y precisión",
-  },
-  {
-    label: "Música",
-    emoji: "🎵",
-    color: "from-purple-400 to-pink-400",
-    bg: "hover:bg-purple-50 dark:hover:bg-purple-500/10",
-    border: "hover:border-purple-400/60 dark:hover:border-purple-500/40",
-    shadow: "hover:shadow-purple-400/20",
-    desc: "Escuchar y sentir",
-  },
-  {
-    label: "Tocar instrumentos",
-    emoji: "🎸",
-    color: "from-rose-400 to-red-400",
-    bg: "hover:bg-rose-50 dark:hover:bg-rose-500/10",
-    border: "hover:border-rose-400/60 dark:hover:border-rose-500/40",
-    shadow: "hover:shadow-rose-400/20",
-    desc: "Expresión musical",
-  },
-  {
-    label: "Fútbol",
-    emoji: "⚽",
-    color: "from-green-400 to-emerald-400",
-    bg: "hover:bg-green-50 dark:hover:bg-green-500/10",
-    border: "hover:border-green-400/60 dark:hover:border-green-500/40",
-    shadow: "hover:shadow-green-400/20",
-    desc: "Pasión y trabajo en equipo",
-  },
-  {
-    label: "Dibujar",
-    emoji: "✏️",
-    color: "from-amber-400 to-yellow-400",
-    bg: "hover:bg-amber-50 dark:hover:bg-amber-500/10",
-    border: "hover:border-amber-400/60 dark:hover:border-amber-500/40",
-    shadow: "hover:shadow-amber-400/20",
-    desc: "Creatividad visual",
-  },
-  {
-    label: "Crear páginas web",
-    emoji: "💻",
-    color: "from-blue-500 to-indigo-500",
-    bg: "hover:bg-indigo-50 dark:hover:bg-indigo-500/10",
-    border: "hover:border-indigo-400/60 dark:hover:border-indigo-500/40",
-    shadow: "hover:shadow-indigo-400/20",
-    desc: "Diseño y desarrollo",
-  },
+  { label: "Voleibol",          emoji: "🏐", color: "from-amber-500 to-orange-500",   shadow: "hover:shadow-amber-500/25",  desc: "Deporte en equipo" },
+  { label: "Ping Pong",         emoji: "🏓", color: "from-emerald-500 to-green-600",  shadow: "hover:shadow-emerald-500/25", desc: "Reflejos y precisión" },
+  { label: "Música",            emoji: "🎵", color: "from-violet-500 to-purple-600",  shadow: "hover:shadow-violet-500/25",  desc: "Escuchar y sentir" },
+  { label: "Tocar instrumentos",emoji: "🎸", color: "from-rose-500 to-red-600",       shadow: "hover:shadow-rose-500/25",    desc: "Expresión musical" },
+  { label: "Fútbol",            emoji: "⚽", color: "from-green-500 to-emerald-700",  shadow: "hover:shadow-green-600/25",   desc: "Pasión y equipo" },
+  { label: "Dibujar",           emoji: "✏️", color: "from-yellow-500 to-amber-600",   shadow: "hover:shadow-yellow-500/25",  desc: "Creatividad visual" },
+  { label: "Crear páginas web", emoji: "💻", color: "from-[#4A7C59] to-[#2D5A3D]",   shadow: "hover:shadow-green-700/25",   desc: "Diseño y desarrollo" },
 ];
+
+const words = ["código", "pantalla", "teclado", "trabajo", "IDE"];
+
+function TypewriterWord() {
+  const [index, setIndex]   = useState(0);
+  const [text, setText]     = useState("");
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => {
+    const current = words[index];
+    const speed   = deleting ? 60 : 100;
+
+    const timeout = setTimeout(() => {
+      if (!deleting) {
+        setText(current.slice(0, text.length + 1));
+        if (text.length + 1 === current.length) {
+          setTimeout(() => setDeleting(true), 1400);
+        }
+      } else {
+        setText(current.slice(0, text.length - 1));
+        if (text.length - 1 === 0) {
+          setDeleting(false);
+          setIndex((i) => (i + 1) % words.length);
+        }
+      }
+    }, speed);
+
+    return () => clearTimeout(timeout);
+  }, [text, deleting, index]);
+
+  return (
+    <span className="inline-flex items-baseline">
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4A7C59] to-[#C4A84A] dark:from-[#5D9E72] dark:to-[#C4A84A]">
+        {text}
+      </span>
+      <span className="cursor-blink text-[#4A7C59] dark:text-[#5D9E72]" />
+    </span>
+  );
+}
 
 export default function Hobbies() {
   return (
-    <section id="hobbies" className="relative bg-white dark:bg-slate-950 py-20 px-6 overflow-hidden">
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-purple-50 dark:bg-purple-500/5 rounded-full blur-3xl pointer-events-none" />
+    <section id="hobbies" className="relative py-16 px-6 overflow-hidden"
+      style={{ background: "var(--gradient-section)" }}>
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#4A7C59]/5 dark:bg-[#5D9E72]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-0 w-56 h-56 bg-[#C4A84A]/5 dark:bg-[#C4A84A]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto">
 
         {/* Header */}
         <div className="animate-slide-right flex items-center gap-3 mb-3">
-          <span className="h-px w-8 bg-blue-600" />
-          <span className="text-blue-600 dark:text-blue-400 text-sm font-semibold tracking-widest uppercase">
+          <span className="h-px w-8 bg-[#4A7C59] dark:bg-[#5D9E72]" />
+          <span className="text-[#4A7C59] dark:text-[#5D9E72] text-sm font-semibold tracking-widest uppercase">
             Pasatiempos
           </span>
         </div>
-        <h2 className="animate-fade-up text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight mb-3">
+
+        {/* Interactive title */}
+        <h2 className="animate-fade-up text-4xl sm:text-5xl font-extrabold text-[#1C1208] dark:text-[#F5EDD8] leading-tight mb-2">
           Fuera del{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
-            código
-          </span>
+          <TypewriterWord />
         </h2>
-        <p className="animate-fade-up delay-100 text-gray-500 dark:text-slate-400 text-base mb-12 max-w-xl">
+        <p className="animate-fade-up delay-100 text-[#7A6248] dark:text-[#8A7A60] text-base mb-10 max-w-xl">
           Lo que me apasiona cuando no estoy programando.
         </p>
 
@@ -96,7 +82,7 @@ export default function Hobbies() {
             <div
               key={h.label}
               style={{ animationDelay: `${0.07 * i}s` }}
-              className={`animate-fade-up group flex flex-col items-center gap-3 bg-gray-50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700/50 ${h.border} ${h.bg} rounded-2xl p-6 cursor-default transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-xl ${h.shadow}`}
+              className={`animate-fade-up group flex flex-col items-center gap-3 bg-white dark:bg-[#1A1208] border border-[#DDD5C5] dark:border-[#2A1E0E] hover:border-[#4A7C59]/60 dark:hover:border-[#5D9E72]/40 rounded-2xl p-6 cursor-default transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:shadow-xl ${h.shadow}`}
             >
               {/* Icon */}
               <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${h.color} flex items-center justify-center text-3xl shadow-md group-hover:shadow-lg group-hover:scale-110 transition-all duration-300`}>
@@ -104,12 +90,12 @@ export default function Hobbies() {
               </div>
 
               {/* Label */}
-              <span className="text-gray-800 dark:text-slate-200 text-sm font-bold text-center leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
+              <span className="text-[#1C1208] dark:text-[#F5EDD8] text-sm font-bold text-center leading-tight group-hover:text-[#4A7C59] dark:group-hover:text-[#5D9E72] transition-colors duration-200">
                 {h.label}
               </span>
 
               {/* Description */}
-              <span className="text-gray-400 dark:text-slate-500 text-xs text-center leading-tight">
+              <span className="text-[#7A6248] dark:text-[#8A7A60] text-xs text-center leading-tight">
                 {h.desc}
               </span>
             </div>
