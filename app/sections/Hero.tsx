@@ -21,7 +21,7 @@ function ParticleCanvas() {
     resize();
     window.addEventListener("resize", resize);
 
-    const colors = ["#4A7C59", "#5D9E72", "#C4A84A", "#8B6914", "#3D7A52", "#D4924A"];
+    const colors = ["#16a34a", "#22c55e", "#6b4f3b", "#6b4f3b", "#3D7A52", "#D4924A"];
     const particles: Particle[] = Array.from({ length: 55 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
@@ -84,7 +84,7 @@ function GlitchName() {
 
   return (
     <h1 className="animate-fade-up delay-200 text-6xl sm:text-7xl lg:text-8xl font-black leading-none tracking-tighter mb-4 select-none">
-      <span className="block text-[#1C1208] dark:text-[#F5EDD8]">Sebastián</span>
+      <span className="block text-[#1C1208] dark:text-[#F0FDF4]">Sebastián</span>
       <span
         className={`block relative ${glitching ? "glitch-active" : ""}`}
         data-text="Marcillo"
@@ -104,9 +104,9 @@ function RotatingRing() {
         <circle cx="150" cy="150" r="140" stroke="url(#ringGrad)" strokeWidth="1.5" strokeDasharray="8 6" opacity="0.5" />
         <defs>
           <linearGradient id="ringGrad" x1="0" y1="0" x2="300" y2="300" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#4A7C59" />
-            <stop offset="50%" stopColor="#C4A84A" />
-            <stop offset="100%" stopColor="#4A7C59" />
+            <stop offset="0%" stopColor="#16a34a" />
+            <stop offset="50%" stopColor="#6b4f3b" />
+            <stop offset="100%" stopColor="#16a34a" />
           </linearGradient>
         </defs>
       </svg>
@@ -126,7 +126,7 @@ export default function Hero() {
       {/* Grid */}
       <div className="absolute inset-0 -z-10 opacity-[0.025] dark:opacity-[0.05]"
         style={{
-          backgroundImage: "linear-gradient(#4A7C59 1px,transparent 1px),linear-gradient(to right,#4A7C59 1px,transparent 1px)",
+          backgroundImage: "linear-gradient(#16a34a 1px,transparent 1px),linear-gradient(to right,#16a34a 1px,transparent 1px)",
           backgroundSize: "56px 56px",
         }}
       />
@@ -137,8 +137,8 @@ export default function Hero() {
       </div>
 
       {/* Blobs */}
-      <div className="animate-pulse-glow absolute top-1/4 -left-40 w-[500px] h-[500px] bg-[#4A7C59]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="animate-pulse-glow delay-300 absolute bottom-1/4 -right-40 w-[500px] h-[500px] bg-[#C4A84A]/8 rounded-full blur-3xl pointer-events-none" />
+      <div className="animate-pulse-glow absolute top-1/4 -left-40 w-[500px] h-[500px] bg-[#16a34a]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="animate-pulse-glow delay-300 absolute bottom-1/4 -right-40 w-[500px] h-[500px] bg-[#6b4f3b]/8 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-6xl w-full mx-auto flex flex-col-reverse md:flex-row items-center gap-8 md:gap-14">
 
@@ -148,26 +148,26 @@ export default function Hero() {
           {/* Glitch name */}
           <GlitchName />
 
-          <p className="animate-fade-up delay-300 text-lg sm:text-xl text-[#3D2B1A] dark:text-[#D4C4A0] font-semibold mb-1">
+          <p className="animate-fade-up delay-300 text-lg sm:text-xl text-[#1A3D22] dark:text-[#D4C4A0] font-semibold mb-1">
             {t.hero.role}
           </p>
-          <p className="animate-fade-up delay-300 text-[#7A6248] dark:text-[#8A7A60] text-sm mb-5">
+          <p className="animate-fade-up delay-300 text-[#4A7C59] dark:text-[#6EE7A0] text-sm mb-5">
             {t.hero.semester}
           </p>
-          <p className="animate-fade-up delay-400 text-[#7A6248] dark:text-[#8A7A60] text-base sm:text-lg mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
+          <p className="animate-fade-up delay-400 text-[#4A7C59] dark:text-[#6EE7A0] text-base sm:text-lg mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
             {t.hero.description}
           </p>
 
           {/* Buttons */}
           <div className="animate-fade-up delay-500 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
             <a href={SITE.cv} download
-              className="group relative inline-flex items-center justify-center gap-2 bg-[#4A7C59] dark:bg-[#5D9E72] text-white font-semibold px-7 py-3.5 rounded-xl overflow-hidden transition-all duration-300 shadow-lg shadow-[#4A7C59]/30 hover:shadow-[#4A7C59]/50 hover:-translate-y-1 active:scale-95">
+              className="group relative inline-flex items-center justify-center gap-2 bg-[#16a34a] dark:bg-[#22c55e] text-white font-semibold px-7 py-3.5 rounded-xl overflow-hidden transition-all duration-300 shadow-lg shadow-[#16a34a]/30 hover:shadow-[#16a34a]/50 hover:-translate-y-1 active:scale-95">
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               <DownloadIcon className="w-5 h-5 group-hover:-translate-y-0.5 transition-transform duration-300" />
               {t.hero.downloadCV}
             </a>
             <a href="#projects"
-              className="group inline-flex items-center justify-center gap-2 bg-white/60 dark:bg-[#1A1208]/60 backdrop-blur-sm text-[#1C1208] dark:text-[#F5EDD8] font-semibold px-7 py-3.5 rounded-xl border border-[#C8BCA8] dark:border-[#3A2A14] hover:border-[#4A7C59] dark:hover:border-[#5D9E72] hover:text-[#4A7C59] dark:hover:text-[#5D9E72] transition-all duration-300 hover:-translate-y-1 active:scale-95">
+              className="group inline-flex items-center justify-center gap-2 bg-white/60 dark:bg-[#0D2414]/60 backdrop-blur-sm text-[#1C1208] dark:text-[#F0FDF4] font-semibold px-7 py-3.5 rounded-xl border border-[#BBD9C4] dark:border-[#14532d] hover:border-[#16a34a] dark:hover:border-[#22c55e] hover:text-[#16a34a] dark:hover:text-[#22c55e] transition-all duration-300 hover:-translate-y-1 active:scale-95">
               <CodeIcon className="w-5 h-5 group-hover:rotate-6 transition-transform duration-300" />
               {t.hero.viewProjects}
             </a>
@@ -177,7 +177,7 @@ export default function Hero() {
           <div className="animate-fade-up delay-600 flex flex-wrap gap-2 justify-center md:justify-start mt-6">
             {["Next.js", "TypeScript", "Node.js", "Figma"].map((tech) => (
               <span key={tech}
-                className="text-xs font-medium px-3 py-1 rounded-full border border-[#C8BCA8] dark:border-[#3A2A14] text-[#7A6248] dark:text-[#8A7A60] bg-white/50 dark:bg-[#1A1208]/50 backdrop-blur-sm hover:border-[#4A7C59] dark:hover:border-[#5D9E72] hover:text-[#4A7C59] dark:hover:text-[#5D9E72] transition-all duration-200 cursor-default">
+                className="text-xs font-medium px-3 py-1 rounded-full border border-[#BBD9C4] dark:border-[#14532d] text-[#4A7C59] dark:text-[#6EE7A0] bg-white/50 dark:bg-[#0D2414]/50 backdrop-blur-sm hover:border-[#16a34a] dark:hover:border-[#22c55e] hover:text-[#16a34a] dark:hover:text-[#22c55e] transition-all duration-200 cursor-default">
                 {tech}
               </span>
             ))}
@@ -192,11 +192,11 @@ export default function Hero() {
             <RotatingRing />
 
             {/* Glow */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#4A7C59] to-[#C4A84A] blur-3xl opacity-20 dark:opacity-25 scale-110" />
+            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#16a34a] to-[#6b4f3b] blur-3xl opacity-20 dark:opacity-25 scale-110" />
 
             {/* Border */}
-            <div className="relative w-full h-full p-[3px] rounded-full bg-gradient-to-tr from-[#4A7C59] via-[#C4A84A] to-[#5D9E72] shadow-2xl shadow-[#4A7C59]/25">
-              <div className="rounded-full overflow-hidden w-full h-full bg-[#4A7C59] relative">
+            <div className="relative w-full h-full p-[3px] rounded-full bg-gradient-to-tr from-[#16a34a] via-[#6b4f3b] to-[#22c55e] shadow-2xl shadow-[#16a34a]/25">
+              <div className="rounded-full overflow-hidden w-full h-full bg-[#16a34a] relative">
                 <Image
                   src="/images/profile.jpg"
                   alt="Sebastián Marcillo"
@@ -208,10 +208,10 @@ export default function Hero() {
             </div>
 
             {/* Corner badges */}
-            <div className="absolute -bottom-2 -right-2 bg-white dark:bg-[#1A1208] border border-[#DDD5C5] dark:border-[#2A1E0E] text-xs font-bold px-3 py-1.5 rounded-full shadow-lg text-[#4A7C59] dark:text-[#5D9E72]">
+            <div className="absolute -bottom-2 -right-2 bg-white dark:bg-[#0D2414] border border-[#BBD9C4] dark:border-[#14532d] text-xs font-bold px-3 py-1.5 rounded-full shadow-lg text-[#16a34a] dark:text-[#22c55e]">
               ✦ Full Stack
             </div>
-            <div className="absolute -top-2 -left-2 bg-white dark:bg-[#1A1208] border border-[#DDD5C5] dark:border-[#2A1E0E] text-xs font-bold px-3 py-1.5 rounded-full shadow-lg text-[#8B6914] dark:text-[#C4A84A]">
+            <div className="absolute -top-2 -left-2 bg-white dark:bg-[#0D2414] border border-[#BBD9C4] dark:border-[#14532d] text-xs font-bold px-3 py-1.5 rounded-full shadow-lg text-[#6b4f3b] dark:text-[#6b4f3b]">
               5° Sem
             </div>
           </div>
@@ -221,3 +221,4 @@ export default function Hero() {
     </section>
   );
 }
+

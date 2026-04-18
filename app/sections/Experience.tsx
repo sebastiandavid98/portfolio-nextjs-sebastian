@@ -181,7 +181,7 @@ const timeline: Record<string, TimelineItem[]> = {
 };
 
 const typeConfig = {
-  academic:  { dot: "bg-blue-500",    line: "border-blue-400",   badge: "bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-500/20",    label: { es: "Académico", en: "Academic",     fr: "Académique",    ja: "学術" } },
+  academic:  { dot: "bg-green-500",    line: "border-blue-400",   badge: "bg-green-50 dark:bg-green-600/10 text-green-700 dark:text-green-400 border-green-200 dark:border-green-600/20",    label: { es: "Académico", en: "Academic",     fr: "Académique",    ja: "学術" } },
   work:      { dot: "bg-emerald-500", line: "border-emerald-400", badge: "bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-200 dark:border-emerald-500/20", label: { es: "Laboral",   en: "Work",          fr: "Professionnel", ja: "職歴" } },
   milestone: { dot: "bg-violet-500",  line: "border-violet-400",  badge: "bg-violet-50 dark:bg-violet-500/10 text-violet-600 dark:text-violet-400 border-violet-200 dark:border-violet-500/20",   label: { es: "Hito",      en: "Milestone",     fr: "Étape clé",     ja: "マイルストーン" } },
 };
@@ -214,15 +214,15 @@ function HorizontalCard({ item, index, lang, position }: {
     >
       {/* Top card or spacer */}
       {position === "top" ? (
-        <div className="group w-52 bg-white dark:bg-[#0F1E3A] border border-gray-200 dark:border-[#1A2E50] rounded-2xl p-4 hover:border-blue-300 dark:hover:border-blue-500/40 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1 transition-all duration-300 mb-4">
+        <div className="group w-52 bg-white dark:bg-[#0F1E3A] border border-gray-200 dark:border-[#1A2E50] rounded-2xl p-4 hover:border-blue-300 dark:hover:border-blue-500/40 hover:shadow-xl hover:shadow-green-600/10 hover:-translate-y-1 transition-all duration-300 mb-4">
           <span className={`inline-block text-xs font-bold px-2.5 py-1 rounded-full border mb-2 ${cfg.badge}`}>
             {cfg.label[lang as keyof typeof cfg.label] ?? cfg.label.es}
           </span>
-          <h3 className="text-gray-900 dark:text-white font-bold text-sm leading-snug mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+          <h3 className="text-gray-900 dark:text-white font-bold text-sm leading-snug mb-1 group-hover:text-green-700 dark:group-hover:text-blue-400 transition-colors">
             {item.title}
           </h3>
           {item.institution && (
-            <p className="text-blue-600 dark:text-blue-400 text-xs mb-2 leading-tight">{item.institution}</p>
+            <p className="text-green-700 dark:text-green-400 text-xs mb-2 leading-tight">{item.institution}</p>
           )}
           <ul className="space-y-0.5 mb-3">
             {item.points.map((p, i) => (
@@ -258,15 +258,15 @@ function HorizontalCard({ item, index, lang, position }: {
 
       {/* Bottom card or spacer */}
       {position === "bottom" ? (
-        <div className="group w-52 bg-white dark:bg-[#0F1E3A] border border-gray-200 dark:border-[#1A2E50] rounded-2xl p-4 hover:border-blue-300 dark:hover:border-blue-500/40 hover:shadow-xl hover:shadow-blue-500/10 hover:translate-y-1 transition-all duration-300 mt-2">
+        <div className="group w-52 bg-white dark:bg-[#0F1E3A] border border-gray-200 dark:border-[#1A2E50] rounded-2xl p-4 hover:border-blue-300 dark:hover:border-blue-500/40 hover:shadow-xl hover:shadow-green-600/10 hover:translate-y-1 transition-all duration-300 mt-2">
           <span className={`inline-block text-xs font-bold px-2.5 py-1 rounded-full border mb-2 ${cfg.badge}`}>
             {cfg.label[lang as keyof typeof cfg.label] ?? cfg.label.es}
           </span>
-          <h3 className="text-gray-900 dark:text-white font-bold text-sm leading-snug mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+          <h3 className="text-gray-900 dark:text-white font-bold text-sm leading-snug mb-1 group-hover:text-green-700 dark:group-hover:text-blue-400 transition-colors">
             {item.title}
           </h3>
           {item.institution && (
-            <p className="text-blue-600 dark:text-blue-400 text-xs mb-2 leading-tight">{item.institution}</p>
+            <p className="text-green-700 dark:text-green-400 text-xs mb-2 leading-tight">{item.institution}</p>
           )}
           <ul className="space-y-0.5 mb-3">
             {item.points.map((p, i) => (
@@ -295,7 +295,7 @@ export default function Experience() {
 
   return (
     <section id="experience" className="relative bg-gray-50 dark:bg-slate-900 py-14 px-6 overflow-hidden">
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-50 dark:bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-green-50 dark:bg-green-600/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto">
 
@@ -310,7 +310,7 @@ export default function Experience() {
         <div className="animate-fade-up delay-100 flex items-center gap-3 mb-8">
           <span className="text-gray-400 dark:text-slate-500 text-sm font-medium">2022</span>
           <div className="flex-1 h-px bg-gradient-to-r from-gray-300 via-blue-400 to-violet-400 dark:from-slate-700 dark:via-blue-500 dark:to-violet-500" />
-          <span className="text-blue-600 dark:text-blue-400 text-sm font-semibold">2026</span>
+          <span className="text-green-700 dark:text-green-400 text-sm font-semibold">2026</span>
         </div>
 
         {/* Horizontal timeline — scrollable on mobile */}
@@ -349,3 +349,4 @@ export default function Experience() {
     </section>
   );
 }
+

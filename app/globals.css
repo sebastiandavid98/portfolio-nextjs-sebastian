@@ -2,75 +2,89 @@
 
 @variant dark (&:where(.dark, .dark *));
 
-/* ── Design tokens ─────────────────────────────────────────── */
+/* ── Design tokens — 70 Verde / 30 Blanco / 10 Café ────────── */
 :root {
-  /* ── LIGHT MODE ── café crema + verde metálico */
-  --bg-base:      #FAF7F2;   /* crema cálido */
-  --bg-surface:   #FFFFFF;
-  --bg-muted:     #F5F0E8;   /* café muy claro */
-  --bg-subtle:    #EDE8DF;
-  --bg-overlay:   rgba(255,252,245,0.9);
+  /* ── LIGHT MODE ── */
 
-  --text-primary:   #1C1208;  /* café oscuro */
-  --text-secondary: #3D2B1A;
-  --text-muted:     #7A6248;
-  --text-faint:     #B09A80;
+  /* Backgrounds (30% blanco) */
+  --bg-base:      #F7FAF8;   /* blanco con tinte verde muy sutil */
+  --bg-surface:   #FFFFFF;   /* blanco puro para cards */
+  --bg-muted:     #EEF5F0;   /* verde muy claro para secciones alternas */
+  --bg-subtle:    #E2EFE6;   /* hover states */
+  --bg-overlay:   rgba(255,255,255,0.9);
 
-  --brand-primary:   #4A7C59;  /* verde bosque metálico */
-  --brand-secondary: #2D5A3D;  /* verde oscuro */
-  --brand-accent:    #8B6914;  /* dorado café */
-  --brand-warm:      #C17F3A;  /* café dorado */
+  /* Text */
+  --text-primary:   #0D1F12;  /* verde casi negro */
+  --text-secondary: #1A3D22;  /* verde oscuro */
+  --text-muted:     #4A7C59;  /* verde medio */
+  --text-faint:     #8AB89A;  /* verde claro */
 
-  --border-base:   #DDD5C5;
-  --border-muted:  #C8BCA8;
-  --border-strong: #A89070;
+  /* Brand — verde 70% */
+  --brand-primary:   #16a34a;  /* verde principal */
+  --brand-secondary: #15803d;  /* verde oscuro */
+  --brand-accent:    #6b4f3b;  /* café 10% */
+  --brand-light:     #dcfce7;  /* verde muy claro */
 
-  --gradient-hero:    linear-gradient(135deg, #FAF7F2 0%, #F0EBE0 50%, #EAF2EC 100%);
-  --gradient-section: linear-gradient(180deg, #F5F0E8 0%, #FFFFFF 100%);
-  --gradient-card:    linear-gradient(135deg, #FFFFFF 0%, #FAF7F2 100%);
-  --gradient-brand:   linear-gradient(135deg, #4A7C59, #2D5A3D);
-  --gradient-accent:  linear-gradient(135deg, #8B6914, #C17F3A);
+  /* Borders */
+  --border-base:   #BBD9C4;
+  --border-muted:  #D4EAD9;
+  --border-strong: #86C49A;
 
-  --shadow-sm:    0 1px 3px 0 rgb(74 124 89 / 0.08);
-  --shadow-md:    0 4px 12px -2px rgb(74 124 89 / 0.12);
-  --shadow-lg:    0 10px 24px -4px rgb(74 124 89 / 0.15);
-  --shadow-xl:    0 20px 40px -8px rgb(74 124 89 / 0.18);
-  --shadow-brand: 0 8px 24px -4px rgb(74 124 89 / 0.35);
+  /* Gradients */
+  --gradient-hero:    linear-gradient(135deg, #F0F9F2 0%, #FFFFFF 50%, #F5FBF6 100%);
+  --gradient-section: linear-gradient(180deg, #EEF5F0 0%, #FFFFFF 100%);
+  --gradient-card:    linear-gradient(135deg, #FFFFFF 0%, #F7FAF8 100%);
+  --gradient-brand:   linear-gradient(135deg, #16a34a, #15803d);
+  --gradient-accent:  linear-gradient(135deg, #6b4f3b, #8B6248);
+
+  /* Shadows */
+  --shadow-sm:    0 1px 3px 0 rgb(22 163 74 / 0.08);
+  --shadow-md:    0 4px 12px -2px rgb(22 163 74 / 0.12);
+  --shadow-lg:    0 10px 24px -4px rgb(22 163 74 / 0.15);
+  --shadow-xl:    0 20px 40px -8px rgb(22 163 74 / 0.18);
+  --shadow-brand: 0 8px 24px -4px rgb(22 163 74 / 0.35);
 }
 
 .dark {
-  /* ── DARK MODE ── café oscuro + verde metálico brillante */
-  --bg-base:      #0E0A06;   /* café negro */
-  --bg-surface:   #1A1208;   /* café muy oscuro */
-  --bg-muted:     #120D07;
-  --bg-subtle:    #221808;
-  --bg-overlay:   rgba(14,10,6,0.92);
+  /* ── DARK MODE ── verde profundo + blanco crema + café */
 
-  --text-primary:   #F5EDD8;  /* crema cálido */
-  --text-secondary: #D4C4A0;
-  --text-muted:     #8A7A60;
-  --text-faint:     #4A3C28;
+  /* Backgrounds */
+  --bg-base:      #071A0D;   /* verde muy oscuro */
+  --bg-surface:   #0D2414;   /* verde oscuro para cards */
+  --bg-muted:     #091A0F;   /* secciones alternas */
+  --bg-subtle:    #122B18;   /* hover */
+  --bg-overlay:   rgba(7,26,13,0.92);
 
-  --brand-primary:   #5D9E72;  /* verde metálico brillante */
-  --brand-secondary: #3D7A52;
-  --brand-accent:    #C4A84A;  /* dorado metálico */
-  --brand-warm:      #D4924A;
+  /* Text */
+  --text-primary:   #F0FDF4;  /* blanco verdoso */
+  --text-secondary: #BBF7D0;  /* verde claro */
+  --text-muted:     #6EE7A0;  /* verde medio */
+  --text-faint:     #2D6A3F;  /* verde apagado */
 
-  --border-base:   #2A1E0E;
-  --border-muted:  #3A2A14;
-  --border-strong: #5A4020;
+  /* Brand */
+  --brand-primary:   #22c55e;  /* verde brillante */
+  --brand-secondary: #16a34a;  /* verde medio */
+  --brand-accent:    #A07850;  /* café dorado */
+  --brand-light:     #14532d;  /* verde muy oscuro */
 
-  --gradient-hero:    linear-gradient(135deg, #0E0A06 0%, #120D07 50%, #0A120A 100%);
-  --gradient-section: linear-gradient(180deg, #120D07 0%, #0E0A06 100%);
-  --gradient-card:    linear-gradient(135deg, #1A1208 0%, #120D07 100%);
-  --gradient-brand:   linear-gradient(135deg, #5D9E72, #3D7A52);
-  --gradient-accent:  linear-gradient(135deg, #C4A84A, #D4924A);
+  /* Borders */
+  --border-base:   #14532d;
+  --border-muted:  #166534;
+  --border-strong: #15803d;
 
+  /* Gradients */
+  --gradient-hero:    linear-gradient(135deg, #071A0D 0%, #0D2414 50%, #071A0D 100%);
+  --gradient-section: linear-gradient(180deg, #091A0F 0%, #071A0D 100%);
+  --gradient-card:    linear-gradient(135deg, #0D2414 0%, #091A0F 100%);
+  --gradient-brand:   linear-gradient(135deg, #22c55e, #16a34a);
+  --gradient-accent:  linear-gradient(135deg, #A07850, #6b4f3b);
+
+  /* Shadows */
   --shadow-sm:    0 1px 3px 0 rgb(0 0 0 / 0.5);
   --shadow-md:    0 4px 12px -2px rgb(0 0 0 / 0.6);
-  --shadow-lg:    0 10px 24px -4px rgb(0 0 0 / 0.7);
-  --shadow-xl:    0 20px 40px -8px rgb(0 0 0 / 0.8);
-  --shadow-brand: 0 8px 24px -4px rgb(93 158 114 / 0.25);
+  --shadow-lg:    0 10px 24px -4px rgb(0 0 0 / 0.65);
+  --shadow-xl:    0 20px 40px -8px rgb(0 0 0 / 0.75);
+  --shadow-brand: 0 8px 24px -4px rgb(34 197 94 / 0.25);
 }
 
 /* ── Base styles ───────────────────────────────────────────── */
@@ -199,9 +213,9 @@ body {
   animation: blink 1s step-end infinite;
 }
 
-/* Shimmer gold — verde/dorado metálico */
+/* Shimmer gold — verde/café */
 .text-shimmer-gold {
-  background: linear-gradient(90deg, #4A7C59, #C4A84A, #8B6914, #5D9E72, #4A7C59);
+  background: linear-gradient(90deg, #16a34a, #6b4f3b, #22c55e, #15803d, #16a34a);
   background-size: 300% auto;
   -webkit-background-clip: text;
   background-clip: text;

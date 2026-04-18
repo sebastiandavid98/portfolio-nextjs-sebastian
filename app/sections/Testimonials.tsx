@@ -6,7 +6,7 @@ const testimonials = [
     name: "Carlos Mendoza",
     role: "Profesor de Algoritmos",
     avatar: "CM",
-    gradient: "from-blue-500 to-cyan-400",
+    gradient: "from-green-600 to-green-400",
     comment:
       "Sebastián demuestra una capacidad de análisis excepcional. Su enfoque para resolver problemas complejos y su dedicación al aprendizaje lo distinguen del resto del grupo.",
     stars: 5,
@@ -84,18 +84,18 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="relative bg-white dark:bg-slate-950 py-14 px-6 overflow-hidden">
       {/* Decorative blobs */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-blue-100/50 dark:bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-blue-100/50 dark:bg-green-600/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-4xl mx-auto">
 
         {/* Header */}
         <div className="animate-slide-right flex items-center gap-3 mb-3">
-          <span className="h-px w-8 bg-blue-600" />
-          <span className="text-blue-600 dark:text-blue-400 text-sm font-semibold tracking-widest uppercase">Testimonios</span>
+          <span className="h-px w-8 bg-green-700" />
+          <span className="text-green-700 dark:text-green-400 text-sm font-semibold tracking-widest uppercase">Testimonios</span>
         </div>
         <h2 className="animate-fade-up text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight mb-8">
           Lo que dicen{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">de mí</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-700 to-green-500">de mí</span>
         </h2>
 
         {/* Carousel */}
@@ -145,7 +145,7 @@ export default function Testimonials() {
           {/* Navigation arrows */}
           <button
             onClick={prev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 w-10 h-10 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-full flex items-center justify-center text-gray-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-400 shadow-md transition-all duration-200 hover:scale-110"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 w-10 h-10 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-full flex items-center justify-center text-gray-600 dark:text-slate-400 hover:text-green-700 dark:hover:text-green-400 hover:border-green-500 shadow-md transition-all duration-200 hover:scale-110"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -153,7 +153,7 @@ export default function Testimonials() {
           </button>
           <button
             onClick={next}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 w-10 h-10 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-full flex items-center justify-center text-gray-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-400 shadow-md transition-all duration-200 hover:scale-110"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 w-10 h-10 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-full flex items-center justify-center text-gray-600 dark:text-slate-400 hover:text-green-700 dark:hover:text-green-400 hover:border-green-500 shadow-md transition-all duration-200 hover:scale-110"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -201,3 +201,4 @@ export default function Testimonials() {
     </section>
   );
 }
+

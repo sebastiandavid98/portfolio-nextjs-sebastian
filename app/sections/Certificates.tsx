@@ -14,9 +14,9 @@ const certs = {
       duration: "8 horas",
       location: "Pasto, Colombia",
       image: "/images/certificado2.jpg",
-      color: "from-blue-600 to-cyan-500",
-      border: "hover:border-blue-400",
-      shadow: "hover:shadow-blue-500/20",
+      color: "from-green-700 to-green-500",
+      border: "hover:border-green-500",
+      shadow: "hover:shadow-green-600/20",
     },
     {
       title: "Tercer Seminario Nacional de Ingeniería de Software",
@@ -38,9 +38,9 @@ const certs = {
       duration: "8 hours",
       location: "Pasto, Colombia",
       image: "/images/certificado2.jpg",
-      color: "from-blue-600 to-cyan-500",
-      border: "hover:border-blue-400",
-      shadow: "hover:shadow-blue-500/20",
+      color: "from-green-700 to-green-500",
+      border: "hover:border-green-500",
+      shadow: "hover:shadow-green-600/20",
     },
     {
       title: "3rd National Software Engineering Seminar",
@@ -62,9 +62,9 @@ const certs = {
       duration: "8 heures",
       location: "Pasto, Colombie",
       image: "/images/certificado2.jpg",
-      color: "from-blue-600 to-cyan-500",
-      border: "hover:border-blue-400",
-      shadow: "hover:shadow-blue-500/20",
+      color: "from-green-700 to-green-500",
+      border: "hover:border-green-500",
+      shadow: "hover:shadow-green-600/20",
     },
     {
       title: "3ème Séminaire National de Génie Logiciel",
@@ -86,9 +86,9 @@ const certs = {
       duration: "8時間",
       location: "パスト、コロンビア",
       image: "/images/certificado2.jpg",
-      color: "from-blue-600 to-cyan-500",
-      border: "hover:border-blue-400",
-      shadow: "hover:shadow-blue-500/20",
+      color: "from-green-700 to-green-500",
+      border: "hover:border-green-500",
+      shadow: "hover:shadow-green-600/20",
     },
     {
       title: "第3回全国ソフトウェアエンジニアリングセミナー",
@@ -111,7 +111,7 @@ export default function Certificates() {
 
   return (
     <section id="certificates" className="relative bg-gray-50 dark:bg-slate-900 py-14 px-6 overflow-hidden">
-      <div className="absolute top-0 left-0 w-80 h-80 bg-blue-50 dark:bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-0 w-80 h-80 bg-green-50 dark:bg-green-600/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto">
 
@@ -158,7 +158,7 @@ export default function Certificates() {
 
               {/* Info */}
               <div className="p-5">
-                <h3 className="text-gray-900 dark:text-white font-bold text-sm leading-snug mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
+                <h3 className="text-gray-900 dark:text-white font-bold text-sm leading-snug mb-2 group-hover:text-green-700 dark:group-hover:text-blue-400 transition-colors duration-200">
                   {cert.title}
                 </h3>
                 <p className={`text-sm font-semibold mb-3 text-transparent bg-clip-text bg-gradient-to-r ${cert.color}`}>
@@ -215,3 +215,4 @@ export default function Certificates() {
     </section>
   );
 }
+

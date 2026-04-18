@@ -213,7 +213,7 @@ export default function Chatbot() {
       <button
         onClick={() => setOpen(!open)}
         aria-label="Abrir chat"
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-blue-600 hover:bg-blue-500 text-white rounded-full shadow-xl shadow-blue-500/30 flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95"
+        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-700 hover:bg-green-600 text-white rounded-full shadow-xl shadow-green-600/30 flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95"
       >
         <span className={`transition-all duration-300 ${open ? "rotate-90 scale-90" : ""}`}>
           {open ? (
@@ -235,10 +235,10 @@ export default function Chatbot() {
         <div className="fixed bottom-24 right-6 z-50 w-80 sm:w-96 bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-700 rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-scale-in">
 
           {/* Header */}
-          <div className="bg-gradient-to-r from-blue-600 to-cyan-500 px-4 py-3 flex items-center gap-3">
+          <div className="bg-gradient-to-r from-green-700 to-green-500 px-4 py-3 flex items-center gap-3">
             <div className="relative">
               <div className="w-9 h-9 rounded-xl bg-white/20 flex items-center justify-center text-white font-bold text-sm">S</div>
-              <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-400 rounded-full border-2 border-blue-600" />
+              <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-400 rounded-full border-2 border-green-700" />
             </div>
             <div className="flex-1">
               <p className="text-white font-semibold text-sm">{t.chatbot.title}</p>
@@ -256,12 +256,12 @@ export default function Chatbot() {
             {messages.map((m, i) => (
               <div key={i} className={`flex ${m.from === "user" ? "justify-end" : "justify-start"} gap-2`}>
                 {m.from === "bot" && (
-                  <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center text-white text-xs font-bold shrink-0 mt-0.5">S</div>
+                  <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-green-700 to-green-500 flex items-center justify-center text-white text-xs font-bold shrink-0 mt-0.5">S</div>
                 )}
                 <div className="max-w-[78%]">
                   <div className={`px-3.5 py-2.5 rounded-2xl text-sm leading-relaxed ${
                     m.from === "user"
-                      ? "bg-blue-600 text-white rounded-br-sm"
+                      ? "bg-green-700 text-white rounded-br-sm"
                       : "bg-white dark:bg-slate-800 text-gray-800 dark:text-slate-200 rounded-bl-sm shadow-sm border border-gray-100 dark:border-slate-700"
                   }`}>
                     {renderText(m.text)}
@@ -274,7 +274,7 @@ export default function Chatbot() {
             {/* Typing indicator */}
             {typing && (
               <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center text-white text-xs font-bold shrink-0">S</div>
+                <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-green-700 to-green-500 flex items-center justify-center text-white text-xs font-bold shrink-0">S</div>
                 <div className="bg-white dark:bg-slate-800 border border-gray-100 dark:border-slate-700 px-4 py-3 rounded-2xl rounded-bl-sm shadow-sm flex gap-1.5 items-center">
                   <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
                   <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
@@ -290,7 +290,7 @@ export default function Chatbot() {
             <div className="px-3 py-2 flex gap-2 overflow-x-auto border-t border-gray-100 dark:border-slate-800 bg-white dark:bg-slate-900 scrollbar-hide">
               {suggestions.map((s) => (
                 <button key={s} onClick={() => send(s)}
-                  className="shrink-0 text-xs bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-500/30 px-3 py-1.5 rounded-full hover:bg-blue-100 dark:hover:bg-blue-500/20 transition-colors whitespace-nowrap">
+                  className="shrink-0 text-xs bg-green-50 dark:bg-green-600/10 text-green-700 dark:text-green-400 border border-green-200 dark:border-green-600/30 px-3 py-1.5 rounded-full hover:bg-blue-100 dark:hover:bg-green-600/20 transition-colors whitespace-nowrap">
                   {s}
                 </button>
               ))}
@@ -305,12 +305,12 @@ export default function Chatbot() {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && send()}
               placeholder={t.chatbot.placeholder}
-              className="flex-1 bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-slate-500 rounded-xl px-3 py-2 text-sm outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/20 transition-all"
+              className="flex-1 bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-slate-500 rounded-xl px-3 py-2 text-sm outline-none focus:border-green-600 focus:ring-1 focus:ring-green-600/20 transition-all"
             />
             <button
               onClick={() => send()}
               disabled={!input.trim() || typing}
-              className="bg-blue-600 hover:bg-blue-500 disabled:opacity-40 disabled:cursor-not-allowed text-white p-2.5 rounded-xl transition-all duration-200 hover:scale-105 active:scale-95"
+              className="bg-green-700 hover:bg-green-600 disabled:opacity-40 disabled:cursor-not-allowed text-white p-2.5 rounded-xl transition-all duration-200 hover:scale-105 active:scale-95"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
@@ -322,3 +322,4 @@ export default function Chatbot() {
     </>
   );
 }
+

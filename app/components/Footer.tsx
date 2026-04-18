@@ -63,7 +63,7 @@ export default function Footer() {
       <div className="h-px w-full bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
 
       {/* Background glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-blue-600/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-green-700/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-6 pt-14 pb-8">
 
@@ -75,7 +75,7 @@ export default function Footer() {
             <div className="mb-4">
               <p className="text-2xl font-extrabold text-white tracking-tight">
                 Sebastián{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">
                   Marcillo
                 </span>
               </p>
@@ -128,7 +128,7 @@ export default function Footer() {
               <li>
                 <a href="https://www.linkedin.com/in/sebastian-david-4a1459390" target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-2.5 text-slate-400 hover:text-blue-400 text-sm transition-colors duration-200 group">
-                  <span className="w-8 h-8 rounded-lg bg-slate-800 group-hover:bg-blue-500/10 border border-slate-700 group-hover:border-blue-500/30 flex items-center justify-center transition-all duration-200">
+                  <span className="w-8 h-8 rounded-lg bg-slate-800 group-hover:bg-green-600/10 border border-slate-700 group-hover:border-blue-500/30 flex items-center justify-center transition-all duration-200">
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                     </svg>
@@ -183,3 +183,4 @@ export default function Footer() {
     </footer>
   );
 }
+

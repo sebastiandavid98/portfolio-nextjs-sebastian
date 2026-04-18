@@ -59,7 +59,7 @@ export default function Projects() {
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-10">
           <div /> {/* spacer — title rendered above */}
           <a href={SITE.github} target="_blank" rel="noopener noreferrer"
-            className="animate-fade-in delay-200 flex items-center gap-2 text-gray-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm font-medium transition-all duration-300 shrink-0 group">
+            className="animate-fade-in delay-200 flex items-center gap-2 text-gray-500 dark:text-slate-400 hover:text-green-700 dark:hover:text-green-400 text-sm font-medium transition-all duration-300 shrink-0 group">
             <GitHubIcon />
             <span className="group-hover:underline underline-offset-2">{t.projects.viewAll}</span>
           </a>
@@ -71,7 +71,7 @@ export default function Projects() {
             <article
               key={project.name}
               style={{ animationDelay: `${0.1 * i}s` }}
-              className="animate-fade-up group flex flex-col bg-white dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700/50 rounded-2xl overflow-hidden hover:border-blue-400 dark:hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2 transition-all duration-400"
+              className="animate-fade-up group flex flex-col bg-white dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700/50 rounded-2xl overflow-hidden hover:border-green-500 dark:hover:border-blue-500/50 hover:shadow-2xl hover:shadow-green-600/10 hover:-translate-y-2 transition-all duration-400"
             >
               {/* Image with zoom + overlay */}
               <div className="relative h-44 overflow-hidden bg-gray-100 dark:bg-slate-900">
@@ -90,7 +90,7 @@ export default function Projects() {
                     </a>
                     {project.demo && (
                       <a href={project.demo} target="_blank" rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 bg-blue-600/90 hover:bg-blue-600 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors duration-200">
+                        className="flex items-center gap-1.5 bg-green-700/90 hover:bg-green-700 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors duration-200">
                         <ExternalLinkIcon className="w-3.5 h-3.5" /> Demo
                       </a>
                     )}
@@ -101,9 +101,9 @@ export default function Projects() {
               {/* Content */}
               <div className="flex flex-col flex-1 p-5">
                 {/* Accent bar */}
-                <div className="w-8 h-1 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 mb-3 group-hover:w-16 transition-all duration-500" />
+                <div className="w-8 h-1 rounded-full bg-gradient-to-r from-green-700 to-green-500 mb-3 group-hover:w-16 transition-all duration-500" />
 
-                <h3 className="text-gray-900 dark:text-white font-bold text-base mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
+                <h3 className="text-gray-900 dark:text-white font-bold text-base mb-2 group-hover:text-green-700 dark:group-hover:text-blue-400 transition-colors duration-200">
                   {project.name}
                 </h3>
                 <p className="text-gray-500 dark:text-slate-400 text-sm leading-relaxed flex-1 mb-4">
@@ -125,7 +125,7 @@ export default function Projects() {
                   </a>
                   {project.demo && (
                     <a href={project.demo} target="_blank" rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 text-white text-sm font-medium bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-lg transition-all duration-300 flex-1 justify-center shadow-md shadow-blue-500/20">
+                      className="flex items-center gap-1.5 text-white text-sm font-medium bg-green-700 hover:bg-green-600 px-4 py-2 rounded-lg transition-all duration-300 flex-1 justify-center shadow-md shadow-green-600/20">
                       <ExternalLinkIcon />{t.projects.demo}
                     </a>
                   )}
@@ -138,3 +138,4 @@ export default function Projects() {
     </section>
   );
 }
+

@@ -17,8 +17,8 @@ const skills = [
   },
   {
     name: "TypeScript",
-    bg: "bg-blue-600",
-    shadow: "hover:shadow-blue-500/30",
+    bg: "bg-green-700",
+    shadow: "hover:shadow-green-600/30",
     border: "hover:border-blue-500/60",
     icon: (
       <svg viewBox="0 0 32 32" className="w-8 h-8" fill="none">
@@ -132,8 +132,8 @@ const skills = [
   },
   {
     name: "Python",
-    bg: "bg-blue-600",
-    shadow: "hover:shadow-blue-500/30",
+    bg: "bg-green-700",
+    shadow: "hover:shadow-green-600/30",
     border: "hover:border-yellow-400/60",
     icon: (
       <svg viewBox="0 0 32 32" className="w-8 h-8" fill="none">
@@ -171,9 +171,9 @@ const skills = [
   },
   {
     name: "CSS",
-    bg: "bg-blue-500",
+    bg: "bg-green-500",
     shadow: "hover:shadow-blue-400/30",
-    border: "hover:border-blue-400/60",
+    border: "hover:border-green-500/60",
     icon: (
       <svg viewBox="0 0 32 32" className="w-8 h-8" fill="none">
         <rect width="32" height="32" rx="4" fill="#1572B6"/>
@@ -204,7 +204,7 @@ export default function About() {
 
   return (
     <section id="about" className="relative bg-white dark:bg-slate-950 py-14 px-6 overflow-hidden">
-      <div className="absolute top-0 right-0 w-72 h-72 bg-blue-50 dark:bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-72 h-72 bg-green-50 dark:bg-green-600/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto">
 
@@ -233,8 +233,8 @@ export default function About() {
               { value: "2+", label: t.about.years },
             ].map(({ value, label }) => (
               <div key={label}
-                className="bg-gray-50 dark:bg-slate-800/50 border border-gray-100 dark:border-slate-700/50 rounded-2xl p-5 text-center hover:border-blue-300 dark:hover:border-blue-500/40 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300">
-                <p className="text-3xl font-extrabold text-blue-600 dark:text-blue-400">{value}</p>
+                className="bg-gray-50 dark:bg-slate-800/50 border border-gray-100 dark:border-slate-700/50 rounded-2xl p-5 text-center hover:border-blue-300 dark:hover:border-blue-500/40 hover:-translate-y-1 hover:shadow-lg hover:shadow-green-600/10 transition-all duration-300">
+                <p className="text-3xl font-extrabold text-green-700 dark:text-green-400">{value}</p>
                 <p className="text-gray-500 dark:text-slate-500 text-xs mt-1 leading-tight">{label}</p>
               </div>
             ))}
@@ -258,7 +258,7 @@ export default function About() {
                 <div className="w-16 h-16 rounded-2xl flex items-center justify-center bg-white dark:bg-slate-900 shadow-md group-hover:shadow-lg transition-shadow duration-300">
                   {s.icon}
                 </div>
-                <span className="text-gray-700 dark:text-slate-300 text-sm font-semibold group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200 text-center">
+                <span className="text-gray-700 dark:text-slate-300 text-sm font-semibold group-hover:text-green-700 dark:group-hover:text-blue-400 transition-colors duration-200 text-center">
                   {s.name}
                 </span>
               </div>
@@ -270,3 +270,4 @@ export default function About() {
     </section>
   );
 }
+

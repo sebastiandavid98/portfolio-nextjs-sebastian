@@ -30,13 +30,13 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-gray-200/50 dark:border-slate-700/50">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#" className="font-extrabold text-lg text-gray-900 dark:text-white tracking-tight">
-          Sebastián <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Marcillo</span>
+          Sebastián <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-700 to-green-500">Marcillo</span>
         </a>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className="text-sm text-gray-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-white transition-colors">
+            <a key={l.href} href={l.href} className="text-sm text-gray-600 dark:text-slate-400 hover:text-green-700 dark:hover:text-white transition-colors">
               {l.label}
             </a>
           ))}
@@ -47,7 +47,7 @@ export default function Navbar() {
           <div className="relative">
             <button
               onClick={() => setLangOpen(!langOpen)}
-              className="flex items-center gap-1.5 text-xs font-bold px-2.5 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 text-gray-600 dark:text-slate-400 hover:border-blue-500 hover:text-blue-600 transition-all"
+              className="flex items-center gap-1.5 text-xs font-bold px-2.5 py-1.5 rounded-lg border border-gray-200 dark:border-slate-700 text-gray-600 dark:text-slate-400 hover:border-blue-500 hover:text-green-700 transition-all"
             >
               <span>{current.flag}</span>
               <span>{current.code.toUpperCase()}</span>
@@ -64,7 +64,7 @@ export default function Navbar() {
                     onClick={() => { setLang(l.code); setLangOpen(false); }}
                     className={`w-full flex items-center gap-2.5 px-3 py-2.5 text-sm transition-colors ${
                       lang === l.code
-                        ? "bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 font-semibold"
+                        ? "bg-green-50 dark:bg-green-600/10 text-green-700 dark:text-green-400 font-semibold"
                         : "text-gray-700 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-700"
                     }`}
                   >
@@ -80,7 +80,7 @@ export default function Navbar() {
           <button
             onClick={toggle}
             aria-label="Toggle theme"
-            className="relative flex items-center w-14 h-7 rounded-full border border-gray-200 dark:border-slate-700 bg-gray-100 dark:bg-slate-800 transition-all duration-300 hover:border-blue-400 px-1"
+            className="relative flex items-center w-14 h-7 rounded-full border border-gray-200 dark:border-slate-700 bg-gray-100 dark:bg-slate-800 transition-all duration-300 hover:border-green-500 px-1"
           >
             {/* Track icons */}
             <span className="absolute left-1.5 text-xs">☀️</span>
@@ -102,7 +102,7 @@ export default function Navbar() {
       {menuOpen && (
         <div className="md:hidden bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-slate-700 px-6 py-4 flex flex-col gap-3">
           {links.map((l) => (
-            <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)} className="text-sm text-gray-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-white transition-colors py-1">
+            <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)} className="text-sm text-gray-600 dark:text-slate-400 hover:text-green-700 dark:hover:text-white transition-colors py-1">
               {l.label}
             </a>
           ))}
@@ -111,7 +111,7 @@ export default function Navbar() {
             {langs.map((l) => (
               <button key={l.code} onClick={() => { setLang(l.code); setMenuOpen(false); }}
                 className={`flex items-center gap-1 text-xs px-2 py-1 rounded-lg border transition-all ${
-                  lang === l.code ? "border-blue-500 text-blue-600 bg-blue-50 dark:bg-blue-500/10" : "border-gray-200 dark:border-slate-700 text-gray-500 dark:text-slate-400"
+                  lang === l.code ? "border-blue-500 text-green-700 bg-green-50 dark:bg-green-600/10" : "border-gray-200 dark:border-slate-700 text-gray-500 dark:text-slate-400"
                 }`}>
                 {l.flag} {l.code.toUpperCase()}
               </button>
@@ -122,4 +122,5 @@ export default function Navbar() {
     </header>
   );
 }
+
 
