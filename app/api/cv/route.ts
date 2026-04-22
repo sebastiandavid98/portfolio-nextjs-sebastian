@@ -6,7 +6,10 @@ export async function GET() {
   try {
     const buffer = await renderToBuffer(CVDocument());
 
-    return new NextResponse(buffer, {
+    // Convert Buffer to Uint8Array for NextResponse compatibility
+    const uint8 = new Uint8Array(buffer);
+
+    return new NextResponse(uint8, {
       status: 200,
       headers: {
         "Content-Type": "application/pdf",
