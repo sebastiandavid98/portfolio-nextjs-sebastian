@@ -160,7 +160,7 @@ export default function Hero() {
 
           {/* Buttons */}
           <div className="animate-fade-up delay-500 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-            <a href={SITE.cv} download
+            <a href="/cv" target="_blank" rel="noopener noreferrer"
               className="group relative inline-flex items-center justify-center gap-2 bg-[#16a34a] dark:bg-[#22c55e] text-white font-semibold px-7 py-3.5 rounded-xl overflow-hidden transition-all duration-300 shadow-lg shadow-[#16a34a]/30 hover:shadow-[#16a34a]/50 hover:-translate-y-1 active:scale-95">
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               <DownloadIcon className="w-5 h-5 group-hover:-translate-y-0.5 transition-transform duration-300" />
