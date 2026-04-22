@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useLang } from "../context/LangContext";
 import { DownloadIcon, CodeIcon } from "../components/icons";
-import { SITE } from "../lib/config";
 
 // ── Floating particles ───────────────────────────────────────
 type Particle = { x: number; y: number; size: number; speedX: number; speedY: number; opacity: number; color: string };
@@ -207,13 +206,6 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Corner badges */}
-            <div className="absolute -bottom-2 -right-2 bg-white dark:bg-[#0D2414] border border-[#BBD9C4] dark:border-[#14532d] text-xs font-bold px-3 py-1.5 rounded-full shadow-lg text-[#16a34a] dark:text-[#22c55e]">
-              ✦ Full Stack
-            </div>
-            <div className="absolute -top-2 -left-2 bg-white dark:bg-[#0D2414] border border-[#BBD9C4] dark:border-[#14532d] text-xs font-bold px-3 py-1.5 rounded-full shadow-lg text-[#6b4f3b] dark:text-[#6b4f3b]">
-              5° Sem
-            </div>
           </div>
         </div>
 
