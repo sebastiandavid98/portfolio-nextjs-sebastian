@@ -229,9 +229,11 @@ export default function About() {
               <div
                 key={s.name}
                 style={{ animationDelay: `${0.07 * i}s` }}
-                className={`animate-fade-up group flex items-center justify-center bg-gray-50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700/50 ${s.border} rounded-2xl px-4 py-4 cursor-default transition-all duration-300 hover:scale-105 hover:-translate-y-1 ${s.shadow} hover:shadow-xl hover:bg-white dark:hover:bg-slate-800`}
+                className={`animate-fade-up group flex items-center gap-3 bg-gray-50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700/50 ${s.border} rounded-2xl px-4 py-3.5 cursor-default transition-all duration-300 hover:scale-105 hover:-translate-y-1 ${s.shadow} hover:shadow-xl hover:bg-white dark:hover:bg-slate-800`}
               >
-                <span className="text-gray-700 dark:text-slate-300 text-sm font-semibold group-hover:text-green-700 dark:group-hover:text-green-400 transition-colors duration-200 text-center">
+                {/* Color dot as icon indicator */}
+                <span className={`w-3 h-3 rounded-full ${s.bg} shrink-0 group-hover:scale-125 transition-transform duration-200`} />
+                <span className="text-gray-700 dark:text-slate-300 text-sm font-semibold group-hover:text-green-700 dark:group-hover:text-green-400 transition-colors duration-200">
                   {s.name}
                 </span>
               </div>

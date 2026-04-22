@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useLang } from "../context/LangContext";
-import { DownloadIcon, CodeIcon } from "../components/icons";
+import { DownloadIcon } from "../components/icons";
 
 // ── Floating particles ───────────────────────────────────────
 type Particle = { x: number; y: number; size: number; speedX: number; speedY: number; opacity: number; color: string };
@@ -130,6 +130,21 @@ export default function Hero() {
         }}
       />
 
+      {/* ── 3D perspective rings ── */}
+      <div className="absolute inset-0 -z-10 flex items-center justify-center pointer-events-none overflow-hidden">
+        {[320, 480, 640, 800].map((size, i) => (
+          <div key={size} className="absolute rounded-full border border-[#16a34a]/10 dark:border-[#22c55e]/8"
+            style={{
+              width: size, height: size,
+              transform: `rotateX(70deg) rotateZ(${i * 15}deg)`,
+              animation: `spinSlow ${14 + i * 4}s linear infinite ${i % 2 === 0 ? "" : "reverse"}`,
+            }}
+          />
+        ))}
+        {/* Central glow sphere */}
+        <div className="absolute w-64 h-64 rounded-full bg-[#16a34a]/5 dark:bg-[#22c55e]/5 blur-3xl" />
+      </div>
+
       {/* Particles */}
       <div className="absolute inset-0 -z-10">
         <ParticleCanvas />
@@ -139,7 +154,7 @@ export default function Hero() {
       <div className="animate-pulse-glow absolute top-1/4 -left-40 w-[500px] h-[500px] bg-[#16a34a]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="animate-pulse-glow delay-300 absolute bottom-1/4 -right-40 w-[500px] h-[500px] bg-[#6b4f3b]/8 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative max-w-6xl w-full mx-auto flex flex-col-reverse md:flex-row items-center gap-6 md:gap-12">
+      <div className="relative max-w-6xl w-full mx-auto flex flex-col-reverse md:flex-row items-center gap-6 md:gap-16">
 
         {/* ── Text ── */}
         <div className="flex-1 text-center md:text-left">
@@ -157,18 +172,13 @@ export default function Hero() {
             {t.hero.description}
           </p>
 
-          {/* Buttons */}
-          <div className="animate-fade-up delay-500 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+          {/* Single CTA button */}
+          <div className="animate-fade-up delay-500 flex justify-center md:justify-start">
             <a href="/cv" target="_blank" rel="noopener noreferrer"
-              className="group relative inline-flex items-center justify-center gap-2 bg-[#16a34a] dark:bg-[#22c55e] text-white font-semibold px-7 py-3.5 rounded-xl overflow-hidden transition-all duration-300 shadow-lg shadow-[#16a34a]/30 hover:shadow-[#16a34a]/50 hover:-translate-y-1 active:scale-95">
+              className="group relative inline-flex items-center justify-center gap-2 bg-[#16a34a] dark:bg-[#22c55e] text-white font-semibold px-8 py-4 rounded-xl overflow-hidden transition-all duration-300 shadow-lg shadow-[#16a34a]/30 hover:shadow-[#16a34a]/50 hover:-translate-y-1 active:scale-95 text-base">
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
               <DownloadIcon className="w-5 h-5 group-hover:-translate-y-0.5 transition-transform duration-300" />
               {t.hero.downloadCV}
-            </a>
-            <a href="#projects"
-              className="group inline-flex items-center justify-center gap-2 bg-white/60 dark:bg-[#0D2414]/60 backdrop-blur-sm text-[#1C1208] dark:text-[#F0FDF4] font-semibold px-7 py-3.5 rounded-xl border border-[#BBD9C4] dark:border-[#14532d] hover:border-[#16a34a] dark:hover:border-[#22c55e] hover:text-[#16a34a] dark:hover:text-[#22c55e] transition-all duration-300 hover:-translate-y-1 active:scale-95">
-              <CodeIcon className="w-5 h-5 group-hover:rotate-6 transition-transform duration-300" />
-              {t.hero.viewProjects}
             </a>
           </div>
 
@@ -183,18 +193,19 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── Profile image ── */}
+        {/* ── Profile image — bigger & centered ── */}
         <div className="animate-scale-in delay-200 animate-float flex-shrink-0 flex justify-center">
-          <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72">
+          <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96">
 
             {/* Rotating dashed ring */}
             <RotatingRing />
 
-            {/* Glow */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#16a34a] to-[#6b4f3b] blur-3xl opacity-20 dark:opacity-25 scale-110" />
+            {/* 3D shadow layers */}
+            <div className="absolute inset-4 rounded-full bg-[#16a34a]/20 blur-2xl translate-y-4 scale-95" />
+            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#16a34a] to-[#6b4f3b] blur-3xl opacity-20 dark:opacity-30 scale-110" />
 
             {/* Border */}
-            <div className="relative w-full h-full p-[3px] rounded-full bg-gradient-to-tr from-[#16a34a] via-[#6b4f3b] to-[#22c55e] shadow-2xl shadow-[#16a34a]/25">
+            <div className="relative w-full h-full p-[4px] rounded-full bg-gradient-to-tr from-[#16a34a] via-[#6b4f3b] to-[#22c55e] shadow-2xl shadow-[#16a34a]/30">
               <div className="rounded-full overflow-hidden w-full h-full bg-[#16a34a] relative">
                 <Image
                   src="/images/profile.jpg"

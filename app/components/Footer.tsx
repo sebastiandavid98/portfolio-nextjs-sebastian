@@ -174,8 +174,7 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-slate-600 text-xs">
           <p>© {year} Sebastián Marcillo. {t.footer.rights}</p>
           <p className="flex items-center gap-1.5">
-            {t.footer.built}
-            <span className="text-blue-500">♥</span>
+            Diseñado y desarrollado por <span className="font-semibold text-green-400">Sebastián</span> · De Colombia pa&apos; el mundo 🇨🇴
           </p>
         </div>
 
