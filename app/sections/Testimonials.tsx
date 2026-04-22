@@ -161,7 +161,7 @@ export default function Testimonials() {
           </button>
         </div>
 
-        {/* Dots + mini previews */}
+        {/* Dots */}
         <div className="flex items-center justify-center gap-3 mt-8">
           {testimonials.map((item, i) => (
             <button
@@ -176,23 +176,6 @@ export default function Testimonials() {
               <div className={`rounded-full bg-gradient-to-br ${item.gradient} transition-all duration-300 ${
                 i === active ? "w-8 h-3" : "w-3 h-3"
               }`} />
-            </button>
-          ))}
-        </div>
-
-        {/* Mini avatar strip */}
-        <div className="flex items-center justify-center gap-3 mt-6">
-          {testimonials.map((item, i) => (
-            <button
-              key={i}
-              onClick={() => goTo(i, i > active ? "right" : "left")}
-              className={`w-10 h-10 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center text-white text-xs font-bold transition-all duration-300 ${
-                i === active
-                  ? "scale-110 shadow-lg ring-2 ring-offset-2 ring-offset-white dark:ring-offset-slate-950 ring-blue-400"
-                  : "opacity-50 hover:opacity-80 hover:scale-105"
-              }`}
-            >
-              {item.avatar}
             </button>
           ))}
         </div>
