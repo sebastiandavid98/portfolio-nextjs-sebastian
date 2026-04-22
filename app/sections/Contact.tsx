@@ -50,7 +50,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="relative bg-white dark:bg-slate-950 py-14 px-6 overflow-hidden">
+    <section id="contact" className="relative bg-white dark:bg-slate-950 py-10 px-6 overflow-hidden">
       <div className="absolute top-0 right-0 w-80 h-80 bg-green-50 dark:bg-green-600/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto">
@@ -168,4 +168,6 @@ export default function Contact() {
     </section>
   );
 }
+
+
 

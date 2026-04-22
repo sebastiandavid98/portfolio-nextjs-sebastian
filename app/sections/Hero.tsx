@@ -82,7 +82,7 @@ function GlitchName() {
   }, []);
 
   return (
-    <h1 className="animate-fade-up delay-200 text-6xl sm:text-7xl lg:text-8xl font-black leading-none tracking-tighter mb-4 select-none">
+    <h1 className="animate-fade-up delay-200 text-5xl sm:text-6xl lg:text-7xl font-black leading-none tracking-tighter mb-3 select-none">
       <span className="block text-[#1C1208] dark:text-[#F0FDF4]">Sebastián</span>
       <span
         className={`block relative ${glitching ? "glitch-active" : ""}`}
@@ -117,7 +117,7 @@ export default function Hero() {
   const { t } = useLang();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 pt-16 pb-6 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden" style={{ paddingTop: "64px" }}>
 
       {/* Background */}
       <div className="absolute inset-0 -z-10" style={{ background: "var(--gradient-hero)" }} />
@@ -150,7 +150,7 @@ export default function Hero() {
           <p className="animate-fade-up delay-300 text-lg sm:text-xl text-[#1A3D22] dark:text-[#D4C4A0] font-semibold mb-1">
             {t.hero.role}
           </p>
-          <p className="animate-fade-up delay-300 text-[#4A7C59] dark:text-[#6EE7A0] text-sm mb-5">
+          <p className="animate-fade-up delay-300 text-[#4A7C59] dark:text-[#6EE7A0] text-sm mb-3">
             {t.hero.semester}
           </p>
           <p className="animate-fade-up delay-400 text-[#4A7C59] dark:text-[#6EE7A0] text-base sm:text-lg mb-6 max-w-lg mx-auto md:mx-0 leading-relaxed">
@@ -213,4 +213,6 @@ export default function Hero() {
     </section>
   );
 }
+
+
 

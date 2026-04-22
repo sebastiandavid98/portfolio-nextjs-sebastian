@@ -82,7 +82,7 @@ export default function Testimonials() {
   const t = testimonials[active];
 
   return (
-    <section id="testimonials" className="relative bg-white dark:bg-slate-950 py-14 px-6 overflow-hidden">
+    <section id="testimonials" className="relative bg-white dark:bg-slate-950 py-10 px-6 overflow-hidden">
       {/* Decorative blobs */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-blue-100/50 dark:bg-green-600/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -93,7 +93,7 @@ export default function Testimonials() {
           <span className="h-px w-8 bg-green-700" />
           <span className="text-green-700 dark:text-green-400 text-sm font-semibold tracking-widest uppercase">Testimonios</span>
         </div>
-        <h2 className="animate-fade-up text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight mb-8">
+        <h2 className="animate-fade-up text-4xl sm:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight mb-5">
           Lo que dicen{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-700 to-green-500">de mí</span>
         </h2>
@@ -121,12 +121,12 @@ export default function Testimonials() {
             <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${t.gradient} rounded-t-3xl`} />
 
             {/* Stars */}
-            <div className="mb-6">
+            <div className="mb-4">
               <Stars count={t.stars} />
             </div>
 
             {/* Quote */}
-            <blockquote className="text-gray-700 dark:text-slate-300 text-lg sm:text-xl leading-relaxed font-medium mb-8 relative z-10">
+            <blockquote className="text-gray-700 dark:text-slate-300 text-lg sm:text-xl leading-relaxed font-medium mb-5 relative z-10">
               "{t.comment}"
             </blockquote>
 
@@ -201,4 +201,6 @@ export default function Testimonials() {
     </section>
   );
 }
+
+
 

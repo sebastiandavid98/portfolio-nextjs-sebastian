@@ -53,13 +53,13 @@ function TypewriterWord() {
 
 export default function Hobbies() {
   return (
-    <section id="hobbies" className="relative bg-gray-50 dark:bg-slate-900 py-14 px-6 overflow-hidden">
+    <section id="hobbies" className="relative bg-gray-50 dark:bg-slate-900 py-10 px-6 overflow-hidden">
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-green-50 dark:bg-green-600/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto">
 
         {/* Header with typewriter */}
-        <div className="mb-6">
+        <div className="mb-4">
           <div className="animate-slide-right flex items-center gap-3 mb-3">
             <span className="h-px w-8 bg-green-700 dark:bg-green-600" />
             <span className="text-green-700 dark:text-green-400 text-sm font-semibold tracking-widest uppercase">
@@ -105,3 +105,5 @@ export default function Hobbies() {
     </section>
   );
 }
+
+
