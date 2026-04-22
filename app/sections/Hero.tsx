@@ -117,7 +117,7 @@ export default function Hero() {
   const { t } = useLang();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 pb-8 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center px-6 pt-16 pb-6 overflow-hidden">
 
       {/* Background */}
       <div className="absolute inset-0 -z-10" style={{ background: "var(--gradient-hero)" }} />
@@ -139,7 +139,7 @@ export default function Hero() {
       <div className="animate-pulse-glow absolute top-1/4 -left-40 w-[500px] h-[500px] bg-[#16a34a]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="animate-pulse-glow delay-300 absolute bottom-1/4 -right-40 w-[500px] h-[500px] bg-[#6b4f3b]/8 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative max-w-6xl w-full mx-auto flex flex-col-reverse md:flex-row items-center gap-8 md:gap-14">
+      <div className="relative max-w-6xl w-full mx-auto flex flex-col-reverse md:flex-row items-center gap-6 md:gap-12">
 
         {/* ── Text ── */}
         <div className="flex-1 text-center md:text-left">
@@ -153,7 +153,7 @@ export default function Hero() {
           <p className="animate-fade-up delay-300 text-[#4A7C59] dark:text-[#6EE7A0] text-sm mb-5">
             {t.hero.semester}
           </p>
-          <p className="animate-fade-up delay-400 text-[#4A7C59] dark:text-[#6EE7A0] text-base sm:text-lg mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
+          <p className="animate-fade-up delay-400 text-[#4A7C59] dark:text-[#6EE7A0] text-base sm:text-lg mb-6 max-w-lg mx-auto md:mx-0 leading-relaxed">
             {t.hero.description}
           </p>
 
@@ -173,7 +173,7 @@ export default function Hero() {
           </div>
 
           {/* Tech stack pills */}
-          <div className="animate-fade-up delay-600 flex flex-wrap gap-2 justify-center md:justify-start mt-6">
+          <div className="animate-fade-up delay-600 flex flex-wrap gap-2 justify-center md:justify-start mt-4">
             {["Next.js", "TypeScript", "Node.js", "Figma"].map((tech) => (
               <span key={tech}
                 className="text-xs font-medium px-3 py-1 rounded-full border border-[#BBD9C4] dark:border-[#14532d] text-[#4A7C59] dark:text-[#6EE7A0] bg-white/50 dark:bg-[#0D2414]/50 backdrop-blur-sm hover:border-[#16a34a] dark:hover:border-[#22c55e] hover:text-[#16a34a] dark:hover:text-[#22c55e] transition-all duration-200 cursor-default">

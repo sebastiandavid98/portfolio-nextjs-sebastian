@@ -59,7 +59,7 @@ export default function Hobbies() {
       <div className="relative max-w-6xl mx-auto">
 
         {/* Header with typewriter */}
-        <div className="mb-10">
+        <div className="mb-6">
           <div className="animate-slide-right flex items-center gap-3 mb-3">
             <span className="h-px w-8 bg-green-700 dark:bg-green-600" />
             <span className="text-green-700 dark:text-green-400 text-sm font-semibold tracking-widest uppercase">

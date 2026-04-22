@@ -188,7 +188,7 @@ export default function About() {
           label={t.about.label}
           title={t.about.title}
           titleAccent={t.about.titleAccent}
-          className="mb-10"
+          className="mb-6"
         />
 
         <div className="grid md:grid-cols-2 gap-10 items-start mb-10">

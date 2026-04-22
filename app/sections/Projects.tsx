@@ -56,7 +56,7 @@ export default function Projects() {
           className="mb-3"
         />
 
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-10">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-6">
           <div /> {/* spacer — title rendered above */}
           <a href={SITE.github} target="_blank" rel="noopener noreferrer"
             className="animate-fade-in delay-200 flex items-center gap-2 text-gray-500 dark:text-slate-400 hover:text-green-700 dark:hover:text-green-400 text-sm font-medium transition-all duration-300 shrink-0 group">
