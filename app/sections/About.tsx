@@ -158,30 +158,6 @@ const skills = [
     ),
   },
   {
-    name: "HTML",
-    bg: "bg-orange-500",
-    shadow: "hover:shadow-orange-400/30",
-    border: "hover:border-orange-400/60",
-    icon: (
-      <svg viewBox="0 0 32 32" className="w-8 h-8" fill="none">
-        <rect width="32" height="32" rx="4" fill="#E34F26"/>
-        <path d="M7 5l1.8 20 7.2 2 7.2-2L25 5H7zm13.5 5.5H12l.2 2.5h8l-.7 7.5-3.5 1-3.5-1-.2-2.5h2.5l.1 1.2 1.1.3 1.1-.3.2-2H11.5l-.6-7H21l-.5 3z" fill="white"/>
-      </svg>
-    ),
-  },
-  {
-    name: "CSS",
-    bg: "bg-green-500",
-    shadow: "hover:shadow-blue-400/30",
-    border: "hover:border-green-500/60",
-    icon: (
-      <svg viewBox="0 0 32 32" className="w-8 h-8" fill="none">
-        <rect width="32" height="32" rx="4" fill="#1572B6"/>
-        <path d="M7 5l1.8 20 7.2 2 7.2-2L25 5H7zm13.5 5.5H12l.2 2.5h8.8l-.7 4H14l.2 2.5 1.8.5 1.8-.5.1-1.5h2.5l-.3 3.5-3.8 1-3.8-1-.5-5.5h2.5l.1 1.2 1.7.5 1.7-.5.2-2H11.5l-.6-7H21l-.5 3z" fill="white"/>
-      </svg>
-    ),
-  },
-  {
     name: "Figma",
     bg: "bg-purple-600",
     shadow: "hover:shadow-purple-500/30",
